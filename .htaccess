@@ -1,0 +1,10 @@
+# Match URLs that aren't a file
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# nor a directory
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# If we've gotten here, we're dealing with something other than the directory index.
+# Let's remove the trailing slash internally
+# This takes care of my second issue in my original question
+RewriteRule ^(.*)/$ $1 [L]

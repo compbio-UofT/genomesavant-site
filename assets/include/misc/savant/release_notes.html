@@ -1,0 +1,553 @@
+<h4>Version 2.0.3 (June 25, 2012)</h4>
+<h5>Bug Fixes</h5>
+<ul>
+	<li>
+		Java application wrapper incompatible with 64-bit Windows JVMs
+	</li>
+	<li>
+		Windows heap space is too low
+	</li>
+	<li>
+		Tabix files created on Windows have wrong line-endings
+	</li>
+	<li>
+		Source can't compile under JDK 1.7
+	</li>
+	<li>
+		At high resolutions, insertions are sometimes not drawn
+	</li>
+	<li>
+		Text input of genome range does not work for computers whose language is French
+	</li>
+	<li>
+		ArrayIndexException if comment row is missing from VCF file
+	</li>
+</ul>
+<h4>Version 2.0.2 (April 17, 2012)</h4>
+<h5>New Features</h5>
+<ul>
+	<li>
+		Update SAM support to 1.4 version of spec
+	</li>
+	<li>
+		Support for GFF3
+	</li>
+	<li>
+		Popup now breaks apart GFF3 and GTF attributes.
+	</li>
+	<li>
+		Fetching news now honours system-wide proxy
+	</li>
+	<li>
+		Support for VCF3.3-style 'I' and 'D' in ALT columns
+	</li>
+	<li>
+		Added blue box to indicate current browsing range within variant map
+	</li>
+</ul>
+<h5>Bug Fixes</h5>
+<ul>
+	<li>
+		NullPointerException rendering some GFF files
+	</li>
+	<li>
+		Block locations offset by one for BED files
+	</li>
+	<li>
+		GFF genes missing some blocks
+	</li>
+	<li>
+		Red mouseover on BAM tracks is incorrect for positions where there are insertions
+	</li>
+	<li>
+		Some half-paired / hanging reads not shown in arc mode
+	</li>
+	<li>
+		ReferenceComparator should be more robust when faced with nonstandard contig names
+	</li>
+	<li>
+		Popups missing on LD Plot when D' not calculated
+	</li>
+</ul>
+<h4>Version 2.0.1 (March 13, 2012)</h4>
+<h5>New Features</h5>
+<ul>
+	<li>
+		Added Frequency Mode for VCF tracks
+	</li>
+	<li>
+		Added option to load track from tool output upon completion
+	</li>
+	<li>
+		Added option to reenable zooming using the mouse wheel
+	</li>
+	<li>
+		Mouse wheel now works on variant map
+	</li>
+	<li>
+		Added legend to variant tracks
+	</li>
+	<li>
+		Added scrollbar so that you can continue navigating in Variant Map after "No Data in Range" message
+	</li>
+	<li>
+		Plugin Manager now shows descriptions and web-sites of plugins
+	</li>
+	<li>
+		Tool plugins are now smart enough to download required libraries
+	</li>
+</ul>
+<h5>Improvements</h5>
+<ul>
+	<li>
+		Select arc does better job of selecting both reads
+	</li>
+	<li>
+		Improvements to LD plot calculation
+	</li>
+	<li>
+		Speeded up reading of local .fa.savant files
+	</li>
+	<li>
+		Min opacity for variant tracks
+	</li>
+	<li>
+		Widths of UCSC Explorer and tool plugins are now dynamic
+	</li>
+	<li>
+		Now handles VCFs with "." for missing genotypes
+	</li>
+</ul>
+<h5>Bug fixes</h5>
+<ul>
+	<li>
+		BAMTrackRenderer is ignoring ARC_MIN threshold
+	</li>
+	<li>
+		Formatter not recognizing some tab delimited files
+	</li>
+	<li>
+		NullPointerException thrown when importing data if file-name portion exceeds 50 characters
+	</li>
+	<li>
+		Running GATK with a local .fa file fails because GATK looks for cached version of file
+	</li>
+	<li>
+		Running GATK with local hg19.fa fails with "lexicographic ordering" exception
+	</li>
+	<li>
+		On Linux, running GATK with remote file fails because of too many open files
+	</li>
+	<li>
+		Fix for sporadic 403 errors accessing files on our web-site
+	</li>
+	<li>
+		Names were not being displayed for generic interval track
+	</li>
+	<li>
+		Deletions just off the left edge of the screen were being drawn
+	</li>
+	<li>
+		Had problems when bookmarks had a mix of "1" and "chr1" names
+	</li>
+	<li>
+		Sporadic ArrayIndexOutOfBoundsException in Strand SNP mode
+	</li>
+	<li>
+		Data table not always updated
+	</li>
+	<li>
+		Very specific bug where reference is in misstep with read alignments at 41,001 - 41,101
+	</li>
+	<li>
+		Sporadic SQL exception using non-standard sequence files
+	</li>
+	<li>
+		Panning leftwards is off by one base
+	</li>
+	<li>
+		Insertion reported as "Deletion" in Strand SNP popup
+	</li>
+	<li>
+		Unable to load hg19/est using UCSC Explorer
+	</li>
+	<li>
+		Export of variant track from Data Table is wrong
+	</li>
+	<li>
+		NegativeArraySizeException opening VCF file with no participants
+	</li>
+	<li>
+		Variant map popups sometimes failing to appear
+	</li>
+	<li>
+		ArrayIndexOutOfBoundsException saving project while it is still loading
+	</li>
+	<li>
+		On Linux, changing the Controls does not repaint the Allele Frequency plot
+	</li>
+	<li>
+		Some vcf-merge files kill VCF rendering
+	</li>
+	<li>
+		OutOfMemoryError painting LD Plot
+	</li>
+	<li>
+		Selecting from a popup in the Variation module doesn't change the reference
+	</li>
+	<li>
+		Reads which show up in arc-mode are sometimes drawn as being mismatched against the reference
+	</li>
+</ul>
+<h4>Version 2.0.0 (February 22, 2012)</h4>
+<h5>New Features</h5>
+<ul>
+	<li>
+		Plugins
+		<ul>
+			<li>
+				Tool framework for wrapping external programs as plugins
+			</li>
+			<li>
+				Allow plugins to add toolbars to the main navigation toolbar
+			</li>
+			<li>
+				Expanded API
+			</li>
+			<li>
+				Plugin for viewing chromatograms
+			</li>
+			<li>
+				Rewrite UCSC plugin to provide a grid-like view of all available tracks
+			</li>
+			<li>
+				UCSC Explorer should be bundled with Savant package
+			</li>
+			<li>
+				IntervalTrack constructor not visible enough for plugin authors
+			</li>
+			<li>
+				Allow for plugins to create BAMDataSources
+			</li>
+			<li>
+				Add API for overriding track popups
+			</li>
+			<li>
+				Allow plugins to refer to external jars
+			</li>
+			<li>
+				Add plugin API for getting record from x,y position
+			</li>
+			<li>
+				Add plugin API for using the Plugin Toolbar
+			</li>
+			<li>
+				1000 Genomes plugin needs flexibility for the root URL
+			</li>
+		</ul>
+	</li>
+	<li>
+		Variants
+		<ul>
+			<li>
+				Renderer for VCF files should show participants
+			</li>
+			<li>
+				Table view
+			</li>
+			<li>
+				Map overview
+			</li>
+			<li>
+				Allele frequency plot
+			</li>
+			<li>
+				Linkage disequilibrium plot
+			</li>
+			<li>
+				VCF parser should handle multiple lines for a single position
+			</li>
+		</ul>
+	</li>
+	<li>
+		BAM tracks
+		<ul>
+			<li>
+				Vertical spike to indicate unpaired reads in mate pair mode
+			</li>
+			<li>
+				Represent indels in SNP modes
+			</li>
+			<li>
+				Add non-paired mapped as filter for BAM tracks
+			</li>
+			<li>
+				Popups for SNP and Strand SNP modes
+			</li>
+			<li>
+				SNP mode popup should give indication of base quality
+			</li>
+			<li>
+				Select Pair should enlarge range to select both ends
+			</li>
+			<li>
+				SNP and Strand SNP modes should pile up Ns
+			</li>
+		</ul>
+	</li>
+	<li>
+		Formatting
+		<ul>
+			<li>
+				New file formatter for VCF files
+			</li>
+			<li>
+				Allow direct use of Fasta files instead of requiring formatting
+			</li>
+			<li>
+				Reporting of Tabix formatting errors could be better
+			</li>
+			<li>
+				Savant should interpret standard GTF fields
+			</li>
+			<li>
+				Blank lines in .GFF files should be ignored rather than causing an error
+			</li>
+			<li>
+				Offer to auto-convert white-space to tabs when formatting
+			</li>
+		</ul>
+	</li>
+	<li>
+		Projects
+		<ul>
+			<li>
+				Loading project should preserve track order
+			</li>
+			<li>
+				Project should save Drawing Mode for open tracks
+			</li>
+		</ul>
+	</li>
+	<li>
+		Generalised filtering mechanism (currently implemented only for BAM)
+	</li>
+	<li>
+		BigWigDataSource should support non-file URIs
+	</li>
+	<li>
+		Update 3rd-party libraries (e.g. SAM, BigWig, Tabix) to latest versions
+	</li>
+	<li>
+		Remove black line from insertion diamond
+	</li>
+	<li>
+		Should detect cache corruption and fail gracefully
+	</li>
+	<li>
+		Represent base quality and mapping quality as alpha values
+	</li>
+	<li>
+		Force .png extension on image exports
+	</li>
+	<li>
+		Scroll wheel should control JScrollPane, not zoom
+	</li>
+	<li>
+		Collision-checking on ruler labels
+	</li>
+	<li>
+		Eliminate showing-but-not-pinned state for Jide windows
+	</li>
+	<li>
+		RefSeq gene track should default to alternative name
+	</li>
+	<li>
+		Spruce up the start page
+	</li>
+	<li>
+		Add chrM to reference Fasta files
+	</li>
+	<li>
+		Savant should use system temp directory instead of maintaining its own
+	</li>
+	<li>
+		Add toggled Legends to Tracks
+	</li>
+	<li>
+		Make selection seem more connected to ruler
+	</li>
+</ul>
+<h5>Significant Bug Fixes</h5>
+<ul>
+	<li>
+		Continuous tracks fail to redraw after scrolling
+	</li>
+	<li>
+		TDF tracks not rendering properly at very high resolutions
+	</li>
+	<li>
+		Caching fails if cache file grows larger than 2GB
+	</li>
+	<li>
+		Off by one in SNP finder
+	</li>
+	<li>
+		Scale to fit doesn't pack BAM reads efficiently
+	</li>
+	<li>
+		TDF files are not taking advantage of caching
+	</li>
+	<li>
+		Select Pair only works if you select second read
+	</li>
+	<li>
+		Arc legends are missing in 1.6.0
+	</li>
+	<li>
+		SNP finder throws exception when zoomed out
+	</li>
+	<li>
+		Odd behaviour after entering inverted range
+	</li>
+	<li>
+		BAM track not drawn after setting interval height to smallest size
+	</li>
+	<li>
+		Insertion gets overdrawn in Read Sequence mode or when Base Quality is enabled.
+	</li>
+	<li>
+		Gene track not always re-drawing
+	</li>
+	<li>
+		Not drawing rectangle when shift-dragging to select records
+	</li>
+	<li>
+		Undo works every other time
+	</li>
+	<li>
+		Ensembl gene track displays in Squish mode, but nothing in Standard mode
+	</li>
+	<li>
+		In 2.0.0-beta, the Table View misreports sequence data
+	</li>
+	<li>
+		Tools menu getting squished
+	</li>
+	<li>
+		Unsaved-changes marker is unreliable
+	</li>
+	<li>
+		Progress-bar doesn't make sense when generating coverage
+	</li>
+	<li>
+		Legend is empty when sequence track zoomed out
+	</li>
+	<li>
+		Two error messages after entering an invalid range into the location box
+	</li>
+	<li>
+		Old Savant icon used when minimising to dock
+	</li>
+	<li>
+		PluginController is downloading updates to no avail
+	</li>
+</ul>
+<h4>Version 1.6.1 (October 17, 2011)</h4>
+<h5>Significant Bug Fixes</h5>
+<ul>
+	<li>
+		Error when formatting BED files with exactly 3 columns.
+	</li>
+</ul>
+<h4>Version 1.6.0 (September 22, 2011)</h4>
+<h5>New Features</h5>
+<ul>
+	<li>
+		New piled interval view for mate pairs
+	</li>
+	<li>
+		Auto-completion for gene names
+	</li>
+	<li>
+		Handle multiple occurrences of feature name in dictionary
+	</li>
+	<li>
+		Thread getting data and make it possible to cancel
+	</li>
+	<li>
+		Add <i>Set as Genome</i> option to sequence tracks
+	</li>
+	<li>
+		Initially size the tracks according to track type
+	</li>
+	<li>
+		Preference to specify initial read height for BAM tracks
+	</li>
+	<li>
+		More control over height scaling
+	</li>
+	<li>
+		Add Y-axis to numeric tracks (especially useful for exporting images)
+	</li>
+	<li>
+		Sorting in bookmark sheet
+	</li>
+	<li>
+		Colours in Strand SNP mode to the axis
+	</li>
+	<li>
+		Export from Table View in original format (e.g. SAM/BAM for alignment tracks, tabix for tabix tracks, fasta for sequence etc.)
+	</li>
+	<li>
+		General framework for filtering data before being rendered
+	</li>
+	<li>
+		Yellow and pink arcs should be united into a single case, called "one read inverted"
+	</li>
+	<li>
+		Show reads in arc mode on click
+	</li>
+	<li>
+		New Export plugin
+	</li>
+	<li>
+		New Gene Ontology plugin
+	</li>
+	<li>
+		New Wiki Pathways plugin
+	</li>
+</ul>
+<h5>Significant Bug Fixes</h5>
+<ul>
+	<li>
+		Prevent plugins from bringing down the UI
+	</li>
+	<li>
+		Progress-bar broken when downloading plugins
+	</li>
+	<li>
+		Known Savant genomes should remember their cytobands
+	</li>
+	<li>
+		SNP Finder plugin throws NullPointer exception when loading project (SNP Finder Plugin 2 calls getLayerCanvas)
+	</li>
+	<li>
+		<i>Export All Selected</i> was exporting all records (selected or not)
+	</li>
+	<li>
+		File repository browser should provide access to all our tracks
+	</li>
+	<li>
+		Plugins continue to draw after being deactivated
+	</li>
+	<li>
+		Colour preferences changes fail to take effect immediately
+	</li>
+	<li>
+		OutOfMemory errors when formatting some coverage tracks
+	</li>
+	<li>
+		Maximising window could break horizontal alignment of tracks
+	</li>
+</ul>

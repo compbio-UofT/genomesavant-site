@@ -1,0 +1,47 @@
+<div class="navbar">
+	<div class="navbar-inner">
+		
+		<ul id="menu" class="nav">	
+			
+			<a class="brand" href="index">Savant Genome Browser</a>
+			<li>
+				<a href="index">About</a>
+			</li>
+			<li>
+				<a href="download">Download</a>
+			</li>
+			<li>
+				<a href="learn">Learn</a>
+			</li>
+			<li>
+				<a href="develop">Develop</a>
+			</li>
+			<li>
+				<a target="_blank" href="https://groups.google.com/forum/?fromgroups#!forum/savant-community">Community</a>
+			</li>
+			<li>
+				<a href="support">Support</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<script>
+	
+	function extractPageName(url) { 
+  		var pagename = url.substring(url.lastIndexOf('/') + 1);
+  		return pagename;
+	}
+	
+	var thispagename =  extractPageName(window.location.pathname);
+
+  	var links = menu.getElementsByTagName('a');
+  	for (i = 0; i < links.length; i++) {
+  		var link = links[i];
+  		if (extractPageName(link.getAttribute('href')) == thispagename) {
+  			if (link.getAttribute('class') != 'brand') {
+  				link.parentNode.className += " active";
+  			}
+  		}
+  	}
+
+</script>

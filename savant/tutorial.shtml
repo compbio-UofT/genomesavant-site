@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--#include virtual="/p/assets/include/meta.html" -->
+	</head>
+	<body>
+		<!--#include virtual="/p/assets/include/banner_savant.html" -->
+		<div class="container-narrow">
+			<div class="masthead">
+				<!--#include virtual="/p/assets/include/navbar_savant.html" -->
+			</div>
+			<hr>
+			<div id="tutorial_banner" class="jumbotron" style="background-image: url(../assets/img/Chalkboard.png)">
+				<h1>tutorials</h1>
+				<p class="lead">
+					Become a Genome Savant by taking tutorials that are designed to help
+					you optimize your genome browsing experience.
+				</p>
+				<a class="btn btn-default" href="learn.shtml">◄ Learning Materials</a>
+			</div>
+			<div class="row-fluid">
+				<div class="span8">
+					<div class="section" name="plugin">
+						<h4>Getting Started</h4>
+						<div class="row-fluid" style="text-align: center; font-size: smaller">
+							<div class="span3">
+								<img src="../assets/img/basics.png"/>
+								<a href="taketutorial.shtml?tutorial=gettingstarted" class="btn btn-mini">Take Tutorial</a>
+							</div>
+							<div style="text-align: left" class="span9">
+								<p>
+									Take this tutorial to learn how to learn the basics, including genome and track loading, navigation, bookmarking, and image exporting.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="section" name="plugin">
+						<h4>Browsing HTS Data</h4>
+						<div class="row-fluid" style="text-align: center; font-size: smaller">
+							<div class="span3">
+								<img src="../assets/img/cover/nextgen.png"/>
+								<a href="taketutorial.shtml?tutorial=hts" class="btn btn-mini">Take Tutorial</a>
+							</div>
+							<div style="text-align: left" class="span9">
+								<p>
+									Take this tutorial to learn how to visualize High Throughput Sequencing Data in Savant. Master the various visualization
+									options, and understand visual signatures for single nucleotide and structural Polymorphisms.
+							</div>
+							</p>
+						</div>
+					</div>
+					<div class="section" name="plugin">
+						<h4>Using Plugins</h4>
+						<div class="row-fluid" style="text-align: center; font-size: smaller">
+							<div class="span3">
+								<img src="../assets/img/cover/extendable.jpg"/>
+								<a href="taketutorial.shtml?tutorial=plugins" class="btn btn-mini">Take Tutorial</a>
+							</div>
+							<div style="text-align: left" class="span9">
+								<p>
+									Take this tutorial to learn how to use plugins in Savant. The growing list of plugins developed for Savant allow you to perform
+	real-time analytics, see new visualizations, and connect to external datasets and databases.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!--/row-->
+			<!--#include virtual="/p/assets/include/footer.html" -->
+		</div>
+		<!--#include virtual="/p/assets/include/scripts_footer.html" -->
+	</body>
+</html>

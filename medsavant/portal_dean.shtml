@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--#include virtual="/p/assets/include/meta.html" -->
+	</head>
+	<body>
+		<!--#include virtual="/p/assets/include/banner_medsavant.html" -->
+		<div class="container-narrow">
+			<div class="masthead">
+				<!--#include virtual="/p/assets/include/navbar_medsavant.html" -->
+			</div>
+			<hr>
+			<div class="jumbotron">
+				<h1>Dean's Portal</h1>
+			</div>
+			<!--#include virtual="/p/assets/include/section/medsavant/portal_announce.html" -->
+			<div class="row-fluid">
+				<div class="span8">
+					<!--#include virtual="/p/assets/include/section/medsavant/portal/dean.html" -->
+				</div><!--/span-->
+			</div><!--/row-->
+			<!--#include virtual="/p/assets/include/footer.html" -->
+		</div>
+		<!--#include virtual="/p/assets/include/scripts_footer.html" -->
+	</body>
+</html>

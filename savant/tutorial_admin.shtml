@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--#include virtual="../assets/include/meta.html" -->
+	</head>
+	<body>
+		<!--#include virtual="../assets/include/banner_savant.html" -->
+		<div class="container-narrow">
+			<div class="masthead">
+				<!--#include virtual="../assets/include/navbar_savant.html" -->
+			</div>
+			<hr>
+			<div id="tutorial_banner" class="jumbotron" style="background-image: url(../assets/img/cover/grad.jpg)">
+				<h1>tutorials</h1>
+				<p class="lead">
+					Become a Genome Savant by taking tutorials that are designed to help
+					you optimize your genome browsing experience.
+				</p>
+			</div>
+			<div class="row-fluid">
+				<div class="span8">
+					<div class="section" name="plugin">
+						<h4>Installing Infobright</h4>
+						<div class="row-fluid" style="text-align: center; font-size: smaller">
+							<div class="span3">
+								<img src="../assets/img/basics.png"/>
+								<a href="taketutorial.shtml?tutorial=infobright" class="btn btn-mini">Take Tutorial</a>
+							</div>
+							<div style="text-align: left" class="span9">
+								<p>
+									This walkthrough will guide your through the Inforbight installation process.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!--/row-->
+			<!--#include virtual="../assets/include/footer.html" -->
+		</div>
+		<!--#include virtual="../assets/include/scripts_footer.html" -->
+	</body>
+</html>

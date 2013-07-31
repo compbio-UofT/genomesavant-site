@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--#include virtual="/p/assets/include/meta.html" -->
+	</head>
+	<body>
+		<!--#include virtual="/p/assets/include/banner_medsavant.html" -->
+		<div class="container-narrow">
+			<div class="masthead">
+				<!--#include virtual="/p/assets/include/navbar_medsavant.html" -->
+			</div>
+			<hr>
+			<div class="jumbotron" style="background-image: url(../assets/img/cover/grad.jpg)">
+				<h1>become a<br/>genome savant</h1>
+				<p class="lead">
+					Learn everything you need to know from our comprehensive set of learning materials.
+				</p>
+			</div>
+			<div class="row-fluid">
+				<div class="span8">
+					<div class="section" name="docs">
+						<h4>Learning Materials</h4>
+						<div class="row-fluid" style="text-align: center; font-size: smaller">
+							<!--<div class="span3">
+								<img rel="tooltip" data-placement="top" title="Learn the basics through a series of online video tutorials" class="img-button" src="../assets/img/video.jpg"/>
+							</div>-->
+							<div class="span3">
+								<img rel="tooltip" data-placement="top" title="Learn how to master MedSavant through a series of step-by-step walkthroughs" class="img-button" src="../assets/img/videotut.png"/>
+							</div>
+							<div class="span3">
+								<img rel="tooltip" data-placement="top" title="Learn how to install and manage your own MedSavant server." class="img-button" src="../assets/img/settings.jpg"/>
+							</div>
+						</div>
+						<div class="row-fluid" style="text-align: center; font-size: smaller">
+							<!--<div class="span3">
+								<a href="#videoModal" role="button" class="btn btn-mini" data-toggle="modal" href="#">Video Tutorials</a>
+							</div>-->
+							<div class="span3">
+								<a class="btn btn-mini" href="tutorial">User Tutorials</a>
+							</div>
+							<div class="span3">
+								<a class="btn btn-mini" href="tutorial_admin">Administration Tutorials</a>
+							</div>
+						</div>
+					</div>
+					<!-- Modal -->
+					<div id="videoModal" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								×
+							</button>
+							<h3 id="myModalLabel">Video Tutorials</h3>
+						</div>
+						<div class="modal-body">
+							<!--#include virtual="/p/assets/include/misc/savant/video_tutorials.html" -->
+						</div>
+					</div>
+					<!-- Modal -->
+					<div id="groupTutorialModal" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<script>
+							$(document).ready(function() {
+								$("#commentForm").validate();
+							});
+
+						</script>
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								×
+							</button>
+							<h3 id="myModalLabel">Group Tutorial Registration</h3>
+						</div>
+						<div id="group_tutorial_body" class="modal-body">
+							<p>
+								We offer in-person group tutorials upon request. If there is sufficient demand,
+								we may be able to have one of our team members travel for one of these offerings.
+							</p>
+							<p>
+								Please register below and we will contact you with more information.
+							</p>
+							<script>
+								function register() {
+
+									var xmlhttp;
+									if(window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+										xmlhttp = new XMLHttpRequest();
+									} else {// code for IE6, IE5
+										xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+									}
+									xmlhttp.onreadystatechange = function() {
+										if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+											document.getElementById("group_tutorial_body").innerHTML = xmlhttp.responseText;
+										}
+									}
+									
+									var tool = "MedSavant";
+									var fname = document.getElementById('cname').value;
+									var lname = document.getElementById('clname').value;
+									var email = document.getElementById('cemail').value;
+									var institution = document.getElementById('cinstitution').value;
+									var attendees = document.getElementById('cattendees').value;
+									
+									//GET
+									xmlhttp.open("GET", "../assets/include/form/both/tutorial_registration.php" + "?tool=" + escape(tool) + "&fname=" + escape(fname) + "&lname=" + escape(lname) + "&email=" + escape(email) + "&institution=" + escape(institution) + "&attendees=" + escape(attendees), true);
+									xmlhttp.send();
+
+								}
+							</script>
+							<blockquote>
+								<form class="cmxform" id="commentForm" method="get" action="">
+									<p>
+										<label for="cname">First Name</label>
+										<input id="cname" name="fname" size="20" class="required" minlength="2" />
+									</p>
+									<p>
+										<label for="clname">Last Name</label>
+										<input id="clname" name="lname" size="20" class="required" minlength="2" />
+									</p>
+									<p>
+										<label for="cemail">Email</label>
+										<input id="cemail" name="email" size="20"  class="required email" />
+									</p>
+									<p>
+										<label for="cinstitution">Institution</label>
+										<input id="cinstitution" name="institution" size="40"  class="required" />
+									</p>
+									<p>
+										<label for="cattendees">Number of attendees</label>
+										<input id="cattendees" name="attendees" size="5"  class="required number" />
+									</p>
+									
+									<br/><a class="btn" onclick="register()">Submit</a>
+									
+								</form>
+							</blockquote>
+						</div>
+					</div>
+				</div><!--/span-->
+				<div class="span4">
+					<div class="well sidebar-nav">
+						<ul class="nav nav-list">
+							<li class="nav-header">
+								Want an in-person tutorial?
+							</li>
+						</ul>
+						<ul class="nav-info">
+							<p>
+								We're happy to conduct group tutorials on Savant Software. Please <a href="#groupTutorialModal" role="button" data-toggle="modal" href="#">contact us</a> for more information.
+							</p>
+						</ul>
+					</div><!--/.well -->
+				</div><!--/span-->
+			</div><!--/row-->
+			<!--#include virtual="/p/assets/include/footer.html" -->
+		</div>
+		<!--#include virtual="/p/assets/include/scripts_footer.html" -->
+	</body>
+</html>

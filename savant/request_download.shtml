@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--#include virtual="/p/assets/include/meta.html" -->
+	</head>
+	<body>
+		<!--#include virtual="/p/assets/include/banner_savant.html" -->
+		<div class="container-narrow">
+			<div class="masthead">
+				<!--#include virtual="/p/assets/include/navbar_savant.html" -->
+			</div>
+			<hr>
+			<div class="jumbotron" style="background-image: url(../assets/img/cover/download.jpg)">
+				<h1>thanks</h1>
+				<iframe style="display: none" id="hiddenDownloader"></iframe>
+				<p class="lead">
+					Your download will begin momentarily. Click <a id="manualdownload">here</a> to start the download manually.
+				</p>
+			</div>
+			
+			<div class="row-fluid marketing">
+				<div class="span6">
+					<h4>Be a genome savant</h4>
+					<p>
+						Learn everything you need to know from our comprehensive set of learning materials.
+					</p>
+					<a class="btn" href="learn">Become a genome savant</a>
+					<br/><br/>
+				</div>
+				<div class="span6">
+					<h4>Join the community</h4>
+					<p>
+						Join the Savant Community to participate in public discussion related to the browser.
+					</p>
+					<a class="btn" href="https://groups.google.com/forum/?fromgroups#!forum/savant-community">Join the community</a>
+					<br/></br/>
+				</div>
+			</div>
+			<!--#include virtual="/p/assets/include/footer.html" -->
+		</div>
+		<!--#include virtual="/p/assets/include/scripts_footer.html" -->
+		<script src="../assets/js/custom/getArgs.js"></script>
+		<!--#include virtual="/p/assets/include/download/savant/links.html" -->
+		<script>
+			os = $_GET["os"];
+			type = $_GET["type"];
+			
+			link = getDownloadLink(os, type);
+
+			document.getElementById('manualdownload').setAttribute('href',link);
+
+			var iframe = document.getElementById('hiddenDownloader');
+    		iframe.src = link;
+		</script>
+	</body>
+</html>

@@ -1,0 +1,100 @@
+<h3>iReckon Plugin</h3>
+<h4>Requirements</h4>
+<p>
+	<ul>
+		<li>
+			Need a genome reference track loaded and an alignment of RNA-Seq reads (to that same reference)
+			loaded from a bam file.
+		</li>
+		<li>
+			For transcriptome analysis results visualization, a gtf file describing isoforms and abundances is
+			needed. This transcriptome analysis must correspond to the RNA-Seq bam file loaded.
+			The format required is the same as the one used in Cufflinks output:
+			Column 3 is either "transcript" or "exon" and the third/fourth element of the optional column (column
+			9) describe the abundances in RPKM.
+		</li>
+		<li>
+			To use the local iReckon option, BWA need to be installed and in the path.
+		</li>
+	</ul>
+</p>
+<h4>Loading a GTF file</h4>
+<p>
+	<ul>
+		<li>
+			Make sure you have a genome reference track and a bam alignment track loaded.
+		</li>
+		<li>
+			To have correct gene and isoform names, a known isoforms annotation can additionally be loaded
+			(UCSC plugin is useful for this)
+		</li>
+		<li>
+			Press the "GTF file" button and select a GTF file corresponding to the RNA-Seq bam file loaded with
+			the correct format (see requirements)
+		</li>
+		<li>
+			Wait until "File loaded" appear on the black panel under the plugin menu. This can take a couple
+			minutes the first time the file is loaded.
+		</li>
+	</ul>
+</p>
+<h4>Exploring genes</h4>
+<p>
+	<ul>
+		Once the GTF file is successfully loaded, you can explore genes you want to visualize:
+		<li>
+			First select in the options menu the criteria of genes searching (maximal length, minimal coverage,
+			minimal number of isoforms). For example, the minimal number of isoforms is by default 2 and you
+			need to change it to 1 if you want to be able to visualize 1-isoform genes (their visualization is less
+			interesting).
+		</li>
+		<li>
+			Select any region of interest in the genome by using Savant navigation tools. You can use the
+			navigation box on the top of the window or select a zone of interest on the chromosome visualization
+			(the bar under the navigation box).
+		</li>
+		<li>
+			All the genes in the selected region that satisfy the criteria in the options menu, will appear in
+			the "Genes in range" box. You may select any of them.
+		</li>
+		<li>
+			Press the "go to" button. Savant will move to the location of the gene selected and all the reads
+			probabilities computations will start automatically.
+		</li>
+	</ul>
+</p>
+<h4>Visualization</h4>
+<p>
+	<ul>
+		Once you select a gene, we compute for every read aligned to it, the probabilities of the isoform of
+		origin (based on the alignment score , the fragments lengths distribution and the isoforms abundances).
+		These computations are used to generate several visualizations:
+		<li>
+			Every RNA-Seq read is assigned a colour that represents the probability it belongs to any present
+			isoform. This visualization bring out the evidence for any reported isoform, since pure colors (red,
+			blue, green) ,for example, characterize reads that maps uniquely to one isoform and confirm its
+			existence, while black reads are unexplained reads (do not map to any isoform) and show missing
+			information or incoherent analysis. [button "compute proba isoforms"]
+		</li>
+		<li>
+			A pie plot is drawn showing the relative levels of expression of all isoforms in a gene and another pie
+			plot showing the proportions of reads assigned to every isoform.
+		</li>
+		[Button "Abundances"]
+		<li>
+			The local coverage graph shows the estimated coverage for every isoform at every single nucleotide
+			position. This graph is useful as a graphical representation of isoforms (introns, exons, splicing sites)
+			and it give precious information on the coherence of the coverage of an isoform across the gene range.
+			[button "compute proba isoforms"]
+		</li>
+	</ul>
+</p>
+<h4>Comparing two transcriptome analysis results</h4>
+<p>
+	<ul>
+		This feature allows the visualization of the difference between two RNA-Seq experiments analysis.</li>
+		<li>
+			Make sure you have a GTF file loaded with the corresponding bam alignment and reference.
+		</li>
+		<li>
+			In the "reference" menu, press "set as a reference" , to store the current transcriptome analysis as the

@@ -1,0 +1,37 @@
+<div id="side-menu" style="position:fixed; width:250px" class="well sidebar-nav">
+	<ul class="nav nav-list">
+		<li class="nav-header">
+			Tutorial: Searching Variants
+		</li>
+		<li>
+			<a href="?tutorial=browsingvariants&part=intro">Overview</a>
+		</li>
+		<li>
+			<a href="?tutorial=browsingvariants&part=filtering">Specifying search conditions</a>
+		</li>
+		<li>
+			<a href="?tutorial=browsingvariants&part=spreadsheet">Browsing the spreadsheet</a>
+		</li>
+		<li>
+			<a href="?tutorial=browsingvariants&part=charts">Visualizing trends</a>
+		</li>
+		<li>
+			<a href="?tutorial=browsingvariants&part=enrichment">Finding enrichment</a>
+		</li>
+		<li>
+			<a href="?tutorial=browsingvariants&part=genomebrowser">Using the genome browser</a>
+		</li>
+		<li>
+			<a href="tutorial">◄ Back to Tutorials</a>
+		</li>
+	</ul>
+</div>
+<script>
+	var links = document.getElementById('side-menu').getElementsByTagName('a');
+	for( i = 0; i < links.length; i++) {
+		var link = links[i];
+		if(extractPageName(link.getAttribute('href')).indexOf("part=" + part) !== -1) {
+			link.parentNode.className += " active";
+		}
+	}
+</script>

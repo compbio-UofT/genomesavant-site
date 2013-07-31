@@ -1,0 +1,96 @@
+<h3>Inspecting SNVs</h3>
+<p>
+	For this part, we will be switching to a previous version of the human reference genome, hg18. In Savant, choose <b>File &gt; Change Genome</b>. Change the genome to <b>Human - Mar. 2006 (NCBI36/hg18)</b>. Load the <b>RefSeq</b> genes if you wish.
+</p>
+<div class="row-fluid alert alert-block alert-info v-pad">
+	<div class="span2">
+		<img class="center" width="90px" src="../assets/img/data.png"/>
+	</div>
+	<div style="text-align: left" class="span9">
+		<p>
+			<b>Read alignments for NA19240 (reference: hg18)</b>
+			http://compbio.cs.toronto.edu/savant/data/public/cbw/2012/alignments/hg18/NA19240.chrom1.SLX.maq.SRP000032.2009_07.bam
+		</p>
+	</div>
+</div>
+<p>
+	In Savant, choose <b>File &gt; Load Track from URL</b>, paste the abovelisted URL and click <b>Go</b>.
+</p>
+<p>
+	Next, we are going to load variants that have been identified in this individual's family. These variants are in VCF format but have been previously formatted for use with Savant. NB: Savant will automatically format any VCF file that you load.
+</p>
+<div class="row-fluid alert alert-block alert-info v-pad">
+	<div class="span2">
+		<img class="center" width="90px" src="../assets/img/data.png"/>
+	</div>
+	<div style="text-align: left" class="span9">
+		<p>
+			<b>Variants from Yoruba Trio (reference: hg18)</b>
+			http://compbio.cs.toronto.edu/savant/data/public/cbw/2012/variants/vcf/YRI.trio.2010_09.genotypes.vcf.gz
+		</p>
+	</div>
+</div>
+<p>
+	In Savant, choose <b>File &gt; Load Track from URL</b>, enter the abovelisted URL and click <b>Go</b>.
+</p>
+<p>
+	A VCF track will be generated. The track is divided into a number of rows, one row per sample from the VCF file. At positions where variants have been predicted, Savant will color that position according to the predicted call. Heterozygous calls will be semi-transparent, as shown for the second individual in the image below.
+</p>
+<p>
+	<img src="tutorials/gettingstarted/img/Savant_vcf.png"/>
+</p>
+<h4>Using the Variation Component</h4>
+<p>
+	The latest version of Savant has a special component for browsing variant files. It is located on the right side, near the bookmarks tab. Click the <b>Variation tab</b> and Toggle auto-hide so that the component is pinned.
+</p>
+<p>
+	<img src="tutorials/gettingstarted/img/Savant_variation.png"/>
+</p>
+<p>
+	Notice that the Variation component that has a range that is independent of the track range. It always contains the track range, but may be larger, allowing you to view a large number of variants but hone in on them in the tracks.
+</p>
+<p>
+	Make the Variation range chr1:1-1000000. You should see a list of variants like the one in the image above.
+</p>
+<p>
+	This component delivers a number of different views:
+</p>
+<ul>
+	<p>
+		<b>Table</b>: lists all variants within the Variation range
+	</p>
+	<p>
+		<b>Map</b>: lists all variants within the Variation range, by individual. The order of individuals from left to right corresponds with their order in the track from top to bottom.
+	</p>
+	<p>
+		<b>Allele Frequency</b>: The frequency of each variant in Variation range among the loaded individuals
+	</p>
+	<p>
+		<b>LD Plot</b>: measures of linkage between variants in the Variation range
+	</p>
+</ul>
+<p>
+	Double-click on a row in the Table view of the Variation component. Savant will center on that variant's position. Validate with the alignments track if the call looks correct.
+</p>
+<p>
+	<img src="tutorials/gettingstarted/img/Savant_validation.png"/>
+</p>
+<p>
+	Browse the files for SNP locations, using the Variation component as a guide. While you do this, think about the following questions.
+</p>
+<strong>Thought Question(s):</strong>
+<ul>
+	<li>
+		Switch the mode of the alignments track to Mismatch mode, then try Appearance > Enable Base Quality or Appearance > Enable Mapping Quality. What do these show? How can these be used to assess the quality of a variant prediction?
+	</li>
+	<li>
+		What level of support seems to be required to call a SNP? 
+		
+	</li>
+	<li>
+		Why do <b>less</b> than half of the reads (usually) support the alternate base in locations of a heterozygous SNP?
+	</li>
+	<li>
+		What proportion of the SNPs called do you think are real?
+	</li>
+</ul>

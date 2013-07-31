@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--#include virtual="/p/assets/include/meta.html" -->
+		<script type="text/javascript" src="../assets/js/osdetect.js"></script>
+	</head>
+	<body>
+		<!--#include virtual="/p/assets/include/banner_medsavant.html" -->
+		<div class="container-narrow">
+			<div class="masthead">
+				<!--#include virtual="/p/assets/include/navbar_medsavant.html" -->
+			</div>
+			<hr>
+			<script>
+				var os = BrowserDetect.OS;
+				var url;
+
+				function startsWith(str1, str2) {
+					return str1.substring(0, str2.length) === str2;
+				}
+
+				if(!startsWith(os, "Mac") && !startsWith(os, "Windows") && !startsWith(os, "Linux")) {
+					os = "your favorite OS";
+				}
+			</script>
+			<div class="jumbotron" style="background-image: url(../assets/img/cover/medsavant_logo.jpg)">
+				<h1>find it faster</h1>
+				<p class="lead">
+					MedSavant integrates storage, annotation, filtration, prioritization, and inspection of genomic variants.
+					It manages huge amounts of data, so you don't have to.
+				</p>
+			</div>
+			<div class="row-fluid">
+				<div class="span8">
+					<div class="alert alert-info">
+						<h4>Want MedSavant?</h4>
+						<p>
+							MedSavant is currently in Beta. Register to be notified when a full public release is made available.
+						</p>
+						<a href="#publicReleaseModal" role="button" data-toggle="modal" class="btn btn-info">Register</a>
+					</div>
+					<!--
+					<div class="alert alert-info">
+						<h4>Private MedSavant Installations available upon request</h4>
+						<p>
+							MedSavant is currently in Beta. If you would like to install a private version of the software, please make a request using the above link. We are happy to help you setup the database and clients.
+						</p>
+						<a href="#privateInstallationModal" role="button" data-toggle="modal" class="btn btn-info">Request Private Installation</a>
+					</div>
+					<div class="alert alert-success">
+						<h4>Want to try it out first?</h4>
+						<p>
+							A MedSavant server containing public data is accessible through the portal. Please contact us for login credentials.
+						</p>
+						<a href="#portalModal" role="button" data-toggle="modal" class="btn btn-success">Request Portal Credentials</a>
+					</div>
+					-->
+					<!--#include virtual="/p/assets/include/section/medsavant/source_download.html" -->
+				</div><!--/span-->
+				<!-- Modal -->
+				<div id="privateInstallationModal" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							×
+						</button>
+						<h5 id="myModalLabel">Request Private Installation</h5>
+					</div>
+					<div id="privateInstallationModal-body" class="modal-body">
+						<script>
+							function requestPrivateInstallation() {
+
+								var xmlhttp;
+								if(window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+									xmlhttp = new XMLHttpRequest();
+								} else {// code for IE6, IE5
+									xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+								}
+								xmlhttp.onreadystatechange = function() {
+									if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+										document.getElementById("privateInstallationModal-body").innerHTML = xmlhttp.responseText;
+									}
+								}
+								var fname = document.getElementById('install-form-fname').value;
+								var lname = document.getElementById('install-form-lname').value;
+								var email = document.getElementById('install-form-email').value;
+								var institution = document.getElementById('install-form-institution').value;
+								var description = document.getElementById('install-form-description').value;
+								var local_storage = document.getElementById('install-form-storage').checked;
+
+								var requestString = "../assets/include/form/medsavant/request_setup.php" + "?fname=" + escape(fname) + "&lname=" + escape(lname) + "&email=" + escape(email) + "&institution=" + escape(institution) + "&description=" + escape(description) + "&local_storage=" + escape(local_storage);
+
+								//GET
+								xmlhttp.open("GET", requestString, true);
+								xmlhttp.send();
+
+							}
+						</script>
+						<blockquote>
+							<form class="cmxform" id="requestInstallationForm" method="get" action="">
+								<p>
+									<label for="install-form-fname">First Name</label>
+									<input id="install-form-fname" name="fname" size="20" class="required" minlength="2" />
+								</p>
+								<p>
+									<label for="install-form-lname">Last Name</label>
+									<input id="install-form-lname" name="lname" size="20" class="required" minlength="2" />
+								</p>
+								<p>
+									<label for="install-form-email">Email</label>
+									<input id="install-form-email" name="email" size="20"  class="required email" />
+								</p>
+								<p>
+									<label for="install-form-institution">Institution</label>
+									<input id="install-form-institution" name="institution" size="40"  class="required" />
+								</p>
+								<p>
+									<label for="install-form-description">Brief description of your data <small>please include kind of data and approx. number of samples</small></label>
+									<textarea id="install-form-description"></textarea>
+								</p>
+								<p style="vertical-align: baseline">
+									<label for="install-form-storage">We will store the data on a local server <small>(requires administrator)</small> </label>
+									<input id="install-form-storage" type="checkbox" name="storage" value="" checked="checked">
+									<br/>
+								</p>
+								<p>
+									<br/>
+									<a class="btn" onclick="requestPrivateInstallation()">Submit</a>
+								</p>
+							</form>
+						</blockquote>
+					</div>
+				</div>
+				<div id="publicReleaseModal" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							×
+						</button>
+						<h5 id="myModalLabel">Register for MedSavant</h5>
+					</div>
+					<div id="publicReleaseModal-body" class="modal-body">
+						<script>
+							function requestPrivateInstallation() {
+
+								var xmlhttp;
+								if(window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+									xmlhttp = new XMLHttpRequest();
+								} else {// code for IE6, IE5
+									xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+								}
+								xmlhttp.onreadystatechange = function() {
+									if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+										document.getElementById("publicReleaseModal-body").innerHTML = xmlhttp.responseText;
+									}
+								}
+								var fname = document.getElementById('release-form-fname').value;
+								var lname = document.getElementById('release-form-lname').value;
+								var email = document.getElementById('release-form-email').value;
+								var institution = document.getElementById('release-form-institution').value;
+								var description = document.getElementById('release-form-description').value;
+								var local_storage = document.getElementById('release-form-storage').checked;
+
+								var requestString = "../assets/include/form/medsavant/request_setup.php" + "?fname=" + escape(fname) + "&lname=" + escape(lname) + "&email=" + escape(email) + "&institution=" + escape(institution) + "&description=" + escape(description) + "&local_storage=" + escape(local_storage);
+
+								//GET
+								xmlhttp.open("GET", requestString, true);
+								xmlhttp.send();
+
+							}
+						</script>
+						<blockquote>
+							<form class="cmxform" id="requestInstallationForm" method="get" action="">
+								<p>
+									<label for="release-form-fname">First Name</label>
+									<input id="release-form-fname" name="fname" size="20" class="required" minlength="2" />
+								</p>
+								<p>
+									<label for="release-form-lname">Last Name</label>
+									<input id="release-form-lname" name="lname" size="20" class="required" minlength="2" />
+								</p>
+								<p>
+									<label for="release-form-email">Email</label>
+									<input id="release-form-email" name="email" size="20"  class="required email" />
+								</p>
+								<p>
+									<label for="release-form-institution">Institution</label>
+									<input id="release-form-institution" name="institution" size="40"  class="required" />
+								</p>
+								<p>
+									<label for="release-form-description">Brief description of your data <small>please include kind of data and approx. number of samples</small></label>
+									<textarea id="release-form-description"></textarea>
+								</p>
+								<p style="vertical-align: baseline">
+									<label for="release-form-storage">We will store the data on a local server <small>(requires administrator)</small> </label>
+									<input id="release-form-storage" type="checkbox" name="storage" value="" checked="checked">
+									<br/>
+								</p>
+								<p>
+									<br/>
+									<a class="btn" onclick="requestPrivateInstallation()">Submit</a>
+								</p>
+							</form>
+						</blockquote>
+					</div>
+				</div>
+				<!--#include virtual="/p/assets/include/modal/medsavant/request_portal_credentials.html" -->
+				<div id="myModal" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							×
+						</button>
+						<h5 id="myModalLabel">Release Notes</h5>
+					</div>
+					<div class="modal-body">
+						<!--#include virtual="/p/assets/include/misc/savant/release_notes.html" -->
+					</div>
+				</div>
+				<div class="span4">
+					<!--#include virtual="/p/assets/include/well/medsavant/whats_new.html" -->
+				</div><!--/span-->
+			</div><!--/row-->
+			<!--#include virtual="/p/assets/include/footer.html" -->
+		</div>
+		<!--#include virtual="/p/assets/include/scripts_footer.html" -->
+	</body>
+</html>

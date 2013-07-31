@@ -1,0 +1,57 @@
+<h3>Loading a Genome</h3>
+<p>
+	Savant requires that a genome be loaded before tracks.
+</p>
+<p>
+	For the remainder of this tutotial, we will be using the human reference genome <strong>hg19</strong>. Load this genome as follows:
+</p>
+<ul>
+<li>
+	Click <b>File &gt; Load a Genome</b>.
+</li>
+<li>
+	Select <b>Published Genome</b>: this option is appropriate when the genome you are working with is found  in the dropdown list of published genomes. For some genomes, you can simultaneously open related tracks e.g. a gene track.
+</li>
+<li>
+	Select the <b>Human - Feb. 2009 (GRCh37/hg19)</b> from the dropdown (if it's not already selected).
+</li>
+<li>
+	Check the <b>Refseq genes</b> checkbox. Click <b>OK</b>.
+</li>
+</ul>
+<img src="tutorials/gettingstarted/img/Savant_loadgenome.png"/>
+<p>
+	If there is some genome that you would like to load, but is not listed in the Load Genome dialog, please let us know. 
+	You can always alternatively load a genome in FASTA format by clicking File > Load Genome from File.
+</p>
+
+<h3>Loading Tracks</h3>
+<p>
+	Savant can load data that's stored a various formats, including BAM, VCF, BED, GFF, and WIG. Some of these 
+	files may need to be specially formatted, however, so that you can browse them quickly. BAM files do not need to 
+	be formatted, although they are required to be sorted (using Samtools sort function) and have an index with extension .bai
+	in the same directory as the file with extension .bam. Upon requesting a file to be loaded through <strong>File > Load Track from File...</strong>, Savant 
+	will either load it if previously formatted or prompt you to format it. For now, let's instead try loading tracks from URL.
+</p>
+<p>
+	Savant can load tracks from web servers, provided the full URL to a previously formatted track. Below is a link to 
+	a read alignments file that is hosted on our web servers. Copy the full URL, then load it using <strong>File > Load Track from URL...</strong>.
+	Paste the URL in the ensuing dialog and click <strong>OK</strong>.
+</p>
+<div class="row-fluid alert alert-block alert-info v-pad">
+	<div class="span2">
+		<img class="center" width="90px" src="../assets/img/data.png"/>
+	</div>
+	<div style="text-align: left" class="span9">
+		<p>
+			<b>NA19240 Alignments to hg19</b>
+			http://compbio.cs.toronto.edu/savant/data/public/cbw/2012/alignments/NA19240.chrom1.ILLUMINA.bwa.YRI.high_coverage.20100311.bam
+		</p>
+	</div>
+</div>
+<p>
+	We cover what this track contains in the HTS tutorial, for now it's only important that you can load remote tracks.
+</p>
+
+
+

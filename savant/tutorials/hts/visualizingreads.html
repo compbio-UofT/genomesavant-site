@@ -1,0 +1,97 @@
+<h3>Loading Read Alignments</h3>
+<p>
+	In this part, we will be learning how to visualize next-gen read alignments in Savant.
+	Listed below is a URL to a BAM file that contains read alignments to hg19.
+	The reads are from a Yoruban individual from the <a href="http://www.1000genomes.org">1000 Genomes Project</a>.
+</p>
+<p>
+	<strong>Note:</strong> The file is hosted on two different servers, to ease the load on our servers during workshops.
+	If you are taking this tutorial as part of a workshop:
+	<ul>
+		<li>
+			if you are on the <strong>left-half</strong> of the room, use the <strong>first URL</strong>
+		</li>
+		<li>
+			if you are on the <strong>right-half</strong> of the room, use the <strong>second URL</strong>
+		</li>
+	</ul>
+	Use either if you are not taking the tutorial as part of a workshop.
+</p>
+<div class="row-fluid alert alert-block alert-info v-pad">
+	<div class="span2">
+		<img class="center" width="90px" src="../assets/img/data.png"/>
+	</div>
+	<div style="text-align: left" class="span9">
+		<p>
+			<b>NA19240 Alignments to hg19</b>
+			http://compbio.cs.toronto.edu/savant/data/public/cbw/2012/alignments/NA19240.chrom1.ILLUMINA.bwa.YRI.high_coverage.20100311.bam
+			<br/>
+			or
+			<br/>
+			http://genomesavant.com/share/cbw/data/NA19240.chrom1.ILLUMINA.bwa.YRI.high_coverage.20100311.bam
+		</p>
+	</div>
+</div>
+<p>
+	In Savant, choose <b>File &gt; Load Track from URL</b>, enter the URL and click <b>Go</b>.
+</p>
+<p>
+	<img src="tutorials/gettingstarted/img/Savant_loadbamurl.png"/>
+</p>
+<h3>Visualizing read alignments</h3>
+<p>
+	The default visualization mode for read alignment tracks when a reference genome is loaded is called <b>Mismatch Mode</b>. In Mismatch Mode, reads are coloured according to the strand to which they map: reads that map to the <b>positive strand are dark blue</b>; those that map to the <b>negative strand are light blue</b>. Where the read sequence <b>mismatches</b> the reference, a coloured box is drawn; the colour of the box represents the letter that exists in the read (using the same colour legend used for displaying the reference).
+</p>
+<p>
+	<img src="tutorials/gettingstarted/img/Savant_mismatch.png"/>
+</p>
+<p>
+	You can switch visualization modes in two ways:
+</p>
+<ul>
+	<p>
+		Choose a new mode from the <b>Display Mode dropdown</b> of the selected track
+	</p>
+	<p>
+		Pressing <b>Ctrl/Cmd+M</b> on the keyboard
+	</p>
+</ul>
+<p>
+	The visualization modes for BAM tracks are as follows:
+</p>
+<ul>
+	<p>
+		<b>Standard</b>: show reads without mismatches
+	</p>
+	<p>
+		<b>Mismatch</b>: show reads and mismatches
+	</p>
+	<p>
+		<b>Read sequence</b>: colour each letter in read sequence
+	</p>
+	<p>
+		<b>Read pair (Standard)</b>: connect read pairs with a line
+	</p>
+	<p>
+		<b>Read pair (Arc)</b>: connect read pairs with an arc; the height and width of the arc corresponds to mapped distance
+	</p>
+	<p>
+		<b>Mapping Quality mode</b>: make reads transparent according to mapping quality
+	</p>
+	<p>
+		<b>Base Quality mode</b>: make positions in reads transparent according to base quality
+	</p>
+	<p>
+		<b>SNP</b>: show a coverage plot, and the proportion of reads that are mismatched
+	</p>
+	<p>
+		<b>Strand SNP</b>: SNP mode, with coverage plots for forward and negative strands separately
+	</p>
+</ul>
+<p>
+	Experiment with the various visualization modes and think about which would be best for specific tasks (e.g. quality control, SNP calling, CNV finding). We will be demonstrating 
+	their unique uses in identifying Single Nucleotide and Structural Variants in the next sections.
+</p>
+<p>
+	<img src="tutorials/gettingstarted/img/Savant_arc.png"/>
+</p>

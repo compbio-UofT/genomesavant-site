@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	function changeVideo(url) {
+		document.getElementById('videoFrame').src = url;
+	}
+</script>
+<select onchange="changeVideo(this.value)">
+	<option value="http://www.youtube.com/embed/JSerxFO1o7M">Installation</option>
+	<option value="http://www.youtube.com/embed/mDxMET9X0R8">Loading a Genome</option>
+	<option value="http://www.youtube.com/embed/3YjvJNNrjS4">Formatting Files</option>
+	<option value="http://www.youtube.com/embed/jsPAm8mQE9c">Loading Tracks</option>
+	<option value="http://www.youtube.com/embed/y6a7upTL_NQ">Navigation</option>
+	<option value="http://www.youtube.com/embed/VXpS9nOdi4Y">Visualization Modes</option>
+	<option value="http://www.youtube.com/embed/_sNoGTGcm7o">Bookmarks and Table View</option>
+	<option value="http://www.youtube.com/embed/lWWawVXgLxM">Installing Plugins</option>
+	<option value="http://www.youtube.com/embed/EzsjyVZLfOQ">UCSC Explorer</option>
+</select>
+<br/>
+<br/>
+<iframe id="videoFrame" width="512" height="288" src="http://www.youtube.com/embed/JSerxFO1o7M" frameborder="" allowfullscreen></iframe>

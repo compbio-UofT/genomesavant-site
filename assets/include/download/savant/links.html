@@ -1,0 +1,65 @@
+<script>
+// latest versions, update as necessary
+var latestInstallerVersion = "v2_0_3";
+var latestSDKVersion = "v2_0_0";
+var latestFormatterVersion = "v2_0_2";
+
+/**
+ * Assumption: files are placed at location <root>/<version>/<filename>
+ * On release of new versions, the abovelisted versions need to correspond to <version>.
+ * The <filenames> need to be adjusted in the switch statements below.
+ */
+
+function getDownloadLink(os, type) {
+
+	var version = "";
+	var root = "dist";
+
+	if(type == "installer") {
+		version = latestInstallerVersion;
+	} else if( type == "sdk") {
+		version = latestSDKVersion;
+	} else if( type == "formatter") {
+		version = latestFormatterVersion;
+	}
+
+	var fullpath = root + "/" + version + "/";
+	
+	if(type == "installer") {
+		if(os == "mac") {
+			return fullpath + "Savant-2.0.3.dmg";
+		} else if(os == "win") {
+			return fullpath + "Savant-2.0.3-Setup.exe";
+		} else if(os == "lin64") {
+			return fullpath + "Savant-2.0.3-Linux-x86_64-Install.sh";
+		} else if(os == "lin32") {
+			return fullpath + "Savant-2.0.3-Linux-x86-Install.sh";
+		} else if(os == "zip") {
+			return fullpath + "Savant-2.0.3.zip";
+		}
+	} else if(type == "sdk") {
+		return fullpath + "SavantSDK-2.0.0-alpha.zip"
+	} else if(type == "formatter") {
+		return fullpath + "FormatTool.sh";
+	}
+}
+
+function prettifyVersion(str) {
+	var result = str.replace("v","");
+	result = result.split('_').join('.')
+	return result;
+}
+
+function getLatestInstallerVersion() {
+	return prettifyVersion(latestInstallerVersion);
+}
+
+function getLatestSDKVersion() {
+	
+	return prettifyVersion(latestSDKVersion);
+}
+
+function getLatestFormatterVersion() {
+	return prettifyVersion(latestFormatterVersion);
+}
+</script>

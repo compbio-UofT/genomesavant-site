@@ -1,0 +1,56 @@
+<script type="text/javascript" src="../assets/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../assets/js/simple.carousel.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		$("#carousel").simplecarousel({
+			width : 900, // should be same as max-width for .container-narrow in custom.css
+			height : 300,
+			auto : 5500,
+			fade : 100,
+			pagination : true
+		});
+	});
+
+</script>
+<style>
+	li {
+		text-align: center;
+	}
+	li span {
+		display: block;
+		margin: 5px;
+		background: red;
+	}
+	.next, .prev {
+		cursor: pointer;
+	}
+	#carousel {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		width: 700px;
+		height: 300px;
+		overflow: hidden;
+	}
+	#carousel li {
+		text-align: left;
+		display: block;
+		width: 700px;
+		height: 300px;
+	}
+	.carousel-pagination {
+		margin: 0px;
+	}
+	.carousel-pagination li {
+		display: block;
+		width: 10px;
+		height: 10px;
+		margin-right: 5px;
+		cursor: pointer;
+		float: left;
+		background: #333;
+	}
+	.carousel-pagination .carousel-pagination-active {
+		background: #00adff;
+	}
+</style>

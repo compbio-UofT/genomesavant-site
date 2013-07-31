@@ -1,0 +1,34 @@
+<div id="side-menu" style="position:fixed; width:250px" class="well sidebar-nav">
+	<ul class="nav nav-list">
+		<li class="nav-header">
+			Tutorial: Server Installation
+		</li>
+		<li>
+			<a href="?tutorial=administration&part=intro">Overview</a>
+		</li>
+		<li>
+			<a href="?tutorial=administration&part=creatingadatabase">Creating a Database</a>
+		</li>
+		<li>
+			<a href="?tutorial=administration&part=creatingaproject">Creating Projects</a>
+		</li>
+		<li>
+			<a href="?tutorial=administration&part=variantannotation">Installing Annotations</a>
+		</li>
+		<li>
+			<a href="?tutorial=administration&part=usermanagement">User Management</a>
+		</li>
+		<li>
+			<a href="tutorial_admin">◄ Back to Tutorials</a>
+		</li>
+	</ul>
+</div>
+<script>
+	var links = document.getElementById('side-menu').getElementsByTagName('a');
+	for( i = 0; i < links.length; i++) {
+		var link = links[i];
+		if(extractPageName(link.getAttribute('href')).indexOf("part=" + part) !== -1) {
+			link.parentNode.className += " active";
+		}
+	}
+</script>

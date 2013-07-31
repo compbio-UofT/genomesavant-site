@@ -1,0 +1,53 @@
+<h3>Securing Connections using SSL</h3>
+<p>
+	If you will be connecting to a MedSavant server outside of your private network, and the data hosted 
+	by your server is sensitive it is highly recommended to set up SSL encryption to ensure secure transfer of 
+	data.
+</p>
+<h4>Creating a public-private key pair</h4>
+<blockquote>
+	<h5>Create the Server Key</h5>
+	<p>
+		Create a self-signed server key by typing the following on the command line
+	</p>
+	<p class="code">
+		keytool -genkey -v -keyalg RSA -keystore server.keystore -validity 36500 -dname "CN=Server, OU=Production, O=University of Toronto, L=Toronto, ST=Ontario, C=Canada"
+	</p>
+	<p>
+		The -validity argument specifies how long the key is valid for, in days.
+	</p>
+	<p>
+		The -dname argument specifies the distinguished name for a certificate associated with the key. The six parameters have the following significance:
+	</p>
+	<ul>
+		<li>CN - Common Name of the certificate owner</li>
+		<li>OU - Organizational Unit of the certificate owner</li>
+		<li>O - Organization to which the certificate owner belongs</li>
+		<li>L - Locality name of the certificate owner</li>
+		<li>S - State or province of the certificate owner</li>
+		<li>C - Country of the certificate owner</li>
+	</ul>
+	<p>
+		Adjust these as appropriate, but keep CN=Server
+	</p>
+	<p>
+		You will be prompted to enter a password. Remember it, we'll need it later.
+	</p>
+	<h5>Create the Client Key</h5>
+	<p>
+		Create a self-signed client key by typing the following on the command line
+	</p>
+	<p class="code">
+		keytool -genkey -v -keyalg RSA -keystore client.keystore -validity 36500 -dname "CN=Client, OU=Production, O=University of Toronto, L=Toronto, ST=Ontario, C=Canada"
+	</p>
+	<p>
+		Again, edit the -dname parameters as necessary, leaving CN=Client
+	</p>
+	
+
+
+
+
+
+	
+</blockquote>

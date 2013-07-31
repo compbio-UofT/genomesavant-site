@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--#include virtual="/p/assets/include/meta.html" -->
+	</head>
+	<body>
+		<!--#include virtual="/p/assets/include/banner_medsavant.html" -->
+		<div class="container-narrow">
+			<div class="masthead">
+				<!--#include virtual="/p/assets/include/navbar_medsavant.html" -->
+			</div>
+			<hr>
+			<div id="tutorial_banner" class="jumbotron" style="background-image: url(../assets/img/settings.jpg)">
+				<h1>admin tutorials</h1>
+				<p class="lead">
+					Learn how to install and manage your own MedSavant server.
+				</p>
+				<a class="btn btn-default" href="learn.shtml">◄ Learning Materials</a>
+			</div>
+			<div class="row-fluid">
+				<div class="span8">
+					<div class="section" name="plugin">
+						<h4>Installing MedSavant Server</h4>
+						<div class="row-fluid" style="text-align: center; font-size: smaller">
+							<div class="span3">
+								<img src="../assets/img/server_small.png"/>
+								<a href="taketutorial.shtml?tutorial=serverinstall" class="btn btn-mini">Take Tutorial</a>
+							</div>
+							<div style="text-align: left" class="span9">
+								<p>
+									MedSavant requires a server. The server can be a separate machine (typical installation) or on the user's machine (single-user mode). This 
+									walkthrough guides you through this installation process.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="section" name="plugin">
+						<h4>Database and Project Administration</h4>
+						<div class="row-fluid" style="text-align: center; font-size: smaller">
+							<div class="span3">
+								<img src="../assets/img/user.png"/>
+								<a href="taketutorial.shtml?tutorial=administration" class="btn btn-mini">Take Tutorial</a>
+							</div>
+							<div style="text-align: left" class="span9">
+								<p>
+									Learn how to create a project, add annotations, and manage users.
+								</p>
+								<script>construction();</script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!--/row-->
+			<!--#include virtual="/p/assets/include/footer.html" -->
+		</div>
+		<!--#include virtual="/p/assets/include/scripts_footer.html" -->
+	</body>
+</html>

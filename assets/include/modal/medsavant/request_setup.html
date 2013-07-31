@@ -1,0 +1,71 @@
+<!-- Modal -->
+<div id="groupTutorialModal" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<script>
+		$(document).ready(function() {
+			$("#commentForm").validate();
+		});
+
+	</script>
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+			×
+		</button>
+		<h3 id="myModalLabel">Private Installation Request</h3>
+	</div>
+	<div id="group_tutorial_body" class="modal-body">
+		<p>
+			MedSavant is now available for Beta Testing. If you are interested in using this software, we'd be happy to help you with the installation process.
+		</p>
+		<p>
+			Please register below and we will contact you with more information.
+		</p>
+		<script>
+			function submitForm() {
+
+				var xmlhttp;
+				if(window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+					xmlhttp = new XMLHttpRequest();
+				} else {// code for IE6, IE5
+					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xmlhttp.onreadystatechange = function() {
+					if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+						document.getElementById("group_tutorial_body").innerHTML = xmlhttp.responseText;
+					}
+				}
+				var type = "private installation";
+				var fname = document.getElementById('cname').value;
+				var lname = document.getElementById('clname').value;
+				var email = document.getElementById('cemail').value;
+				var institution = document.getElementById('cinstitution').value;
+
+				//GET
+				xmlhttp.open("GET", "../assets/include/form/medsavant/request_setup.php" + "?type=" + escape(type) + "&fname=" + escape(fname) + "&lname=" + escape(lname) + "&email=" + escape(email) + "&institution=" + escape(institution), true);
+				xmlhttp.send();
+
+			}
+		</script>
+		<blockquote>
+			<form class="cmxform" id="commentForm" method="get" action="">
+				<h4>Request MedSavant Installation</h4>
+				<p>
+					<label for="cname">First Name</label>
+					<input id="cname" name="fname" size="20" class="required" minlength="2" />
+				</p>
+				<p>
+					<label for="clname">Last Name</label>
+					<input id="clname" name="lname" size="20" class="required" minlength="2" />
+				</p>
+				<p>
+					<label for="cemail">Email</label>
+					<input id="cemail" name="email" size="20"  class="required email" />
+				</p>
+				<p>
+					<label for="cinstitution">Institution</label>
+					<input id="cinstitution" name="institution" size="40"  class="required" />
+				</p>
+				<br/><a class="btn" onclick="submitForm()">Submit</a>
+			</form>
+		</blockquote>
+	</div>
+</div>

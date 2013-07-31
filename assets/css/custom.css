@@ -1,0 +1,182 @@
+body {
+	padding-top: 0px;
+	font-size: 13px;
+}
+/* Custom container */
+.container-narrow {
+	margin: 0 auto;
+	max-width: 900px;
+}
+.container-narrow hr {
+	margin: 0 auto;
+}
+/* Main marketing message and sign up button */
+.jumbotron {
+	min-height: 270px;
+	margin-bottom: 15px;
+	text-align: center;
+	text-align: left;
+	padding-bottom: 5px;
+	/*background-position: center center;*/
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position: right top;
+}
+
+.jumbotron div {
+	min-height: 270px;
+	/*background-position: center center;*/
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position: right top;
+	/*background-size:300px auto;*/
+}
+
+.jumbotron h1 {
+	font-size: 72px;
+	padding-top:30px;
+	line-height: 1;
+}
+.jumbotron .btn {
+	font-size: 21px;
+	padding: 14px 24px;
+}
+
+.jumbotron .lead {
+	width: 580px;
+	text-align: justify;
+}
+
+.jumbotron .carousel-frame li div {
+	height: 100%;
+}
+
+/* Supporting marketing content */
+
+.marketing p + h4 {
+	margin-top: 28px;
+}
+.banner {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	top: 0px;
+	font-size: 12px;
+	background-color: rgb(230,230,230); /*rgb(1,131,193);*/
+	/*color:rgb(230,230,230);*/
+	width: 100%;
+}
+
+.banner a {
+	/*color: white;*/
+}
+
+.banner a:hover {
+	text-decoration: none;
+}
+
+.brand {
+font-weight: 200;
+font-size: 16px;
+color: rgb(119, 119, 119);
+text-shadow: 0 1px 0 white;
+}
+
+hr {
+	padding-bottom: 15px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+p a {
+	box-shadow: 0 1px 0px 0px rgb(220,220,220);
+}
+
+p a:hover {
+	text-decoration: none;
+	color: #00adff;
+	box-shadow: 0 1px 0px 0px #00adff;
+}
+
+.btn:hover {
+	text-decoration: none;
+	box-shadow:none;
+}
+
+.box {
+	background-color: rgb(240,240,240);
+	margin-right: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-size: 11px;
+	padding: 3px;
+}
+.box img {
+	height: 80px;
+	width: 80px;
+}
+.section {
+	display: block;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: thin solid rgb(230,230,230);
+}
+.section:last-child {
+	border-bottom: none;
+	padding-bottom: 0px;
+}
+.section h4 {
+	margin-bottom: 10px;
+}
+.img-button {
+	width: 100px;
+	margin-bottom: 5px;
+}
+.nav a {
+	font-weight: bold;
+}
+.nav a:hover {
+	background-color: white;
+}
+.nav ul {
+	list-style-type: none;
+}
+.nav-info {
+	max-width: 200px;
+	font-size: 11px;
+}
+
+
+.white {
+	color: white;
+	text-shadow: 1px 1px black;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+body {
+  word-wrap: break-word;
+}
+
+img.center {   display: block;   margin-left: auto;   margin-right: auto; }
+
+.v-pad {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+	padding-right: 0px;	
+}
+
+.code {
+	font-family: "Courier New", Courier, monospace;
+	font-size: small;
+	word-wrap: break-word;
+	word-break: break-all;
+	color:green;
+}
+
+blockquote p {
+font-size: 13px;
+}

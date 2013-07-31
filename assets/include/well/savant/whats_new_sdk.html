@@ -1,0 +1,18 @@
+<div class="well sidebar-nav">
+	<ul class="nav nav-list">
+		<li class="nav-header">
+			What's new in SDK 2.0.0
+		</li>
+	</ul>
+	<ul class="nav-info">
+		<li>
+			A large number of classes which were formerly internal to Savant have now been moved to the <tt>savant.api</tt> packages. For instance, the various Event classes have been moved to the <tt>savant.api.event</tt> package, while abstract classes representing the Savant record data-types have been created in <tt>savant.api.data</tt>. The intent is that it should now be possible to implement all the functionality of any plugin without referring to any Savant classes outside the <tt>savant.api.*</tt> tree
+		</li>
+		<li>
+			The format of the <tt>plugin.xml</tt> file has been simplified. Examine the <tt>plugin.xml</tt> files included with the SDK to see what your <tt>plugin.xml</tt> file should now look like.
+		</li>
+		<li>
+			In addition to the existing <tt>SavantPanelPlugin</tt> and <tt>SavantDataSource</tt> plugin classes, there is a third plugin type, <tt>ToolPlugin</tt>, which can be used to wrap command-line tools such as GATK. Documentation for <tt>ToolPlugin</tt>s will be forthcoming.
+		</li>
+	</ul>
+</div><!--/.well -->

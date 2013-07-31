@@ -1,0 +1,86 @@
+<!--<h4>Support</h4>-->
+<p>
+	<script>
+		function submitBug() {
+
+			var xmlhttp;
+			if(window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					
+					var response = xmlhttp.responseText;
+					
+					document.getElementById('formWrapper').style.display = "block";
+					document.getElementById('formWrapper').innerText = response;
+					
+					// problem
+					if(response.indexOf("problem") !== -1) {
+						document.getElementById('formWrapper').className = "alert alert-error";
+					// success
+					} else {
+						document.getElementById('formWrapper').className = "alert alert-info";
+						document.getElementById('bugreport').style.display = "none";
+					}
+				}
+			}
+			
+			var url = document.URL;
+			
+			var tool;
+			if (url.indexOf("medsavant") != -1) {
+				tool = "MedSavant";
+			} else {
+				tool = "Savant";
+			}
+			
+			var exception = "Not avilable, entered online";
+			var clientinfo = "Not available, entered online";
+			var name = document.getElementById('inputName').value;
+			var email = document.getElementById('inputEmail').value;
+			var institution = document.getElementById('inputInstitute').value;
+			var problem = document.getElementById('inputProblem').value;
+
+			//GET
+			xmlhttp.open("GET", "../assets/include/form/both/bugreport.php" + "?tool=" + escape(tool) + "&name=" + escape(name) + "&email=" + escape(email) + "&institution=" + escape(institution) + "&problem=" + escape(problem) + "&exception=" + escape(exception) + "&clientinfo=" + escape(clientinfo), true);
+			xmlhttp.send();
+
+		}
+	</script>
+	
+	<div id="formWrapper" style="display: none" class="alert alert-info"></div>
+	<form id="bugreport" class="form-horizontal" id="commentForm" method="get" action="">
+		<div class="control-group">
+			<label class="control-label" for="inputName">Your Full Name</label>
+			<div class="controls">
+				<input type="text" id="inputName" class="required" placeholder="">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="inputEmail">Email Address</label>
+			<div class="controls">
+				<input type="text" id="inputEmail" class="required" placeholder="">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="inputInstitute">Organization</label>
+			<div class="controls">
+				<input type="text" id="inputInstitute" placeholder="">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="inputProblem">Problem</label>
+			<div class="controls">
+				<textarea id="inputProblem" rows="5" class="required" placeholder="Describe the problem. If it is reproducible, please explain how."></textarea>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<a onclick="submitBug()" type="submit" class="btn"> Submit </a>
+			</div>
+		</div>
+	</form>
+</p>

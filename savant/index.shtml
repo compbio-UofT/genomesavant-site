@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--#include virtual="/p/assets/include/meta.html" -->
+		<!--#include virtual="/p/assets/include/carousel.html" -->
+	</head>
+	<body>
+		<!--#include virtual="/p/assets/include/banner_savant.html" -->
+		<div class="container-narrow">
+			<div class="masthead">
+				<!--#include virtual="/p/assets/include/navbar_savant.html" -->
+			</div>
+			<hr>
+			<div class="jumbotron">
+				<div style="background-image: url(../assets/img/cover/savant_imac.jpg)" >
+							<h1>next generation,<br/>now</h1>
+							<p class="lead">
+								Savant is a next-generation genome browser designed for the latest generation of genome data
+							</p>
+							<!--<a class="btn btn-primary" href="download.shtml">Download</a>-->
+						</div>
+				<!--<ul id="carousel">
+					<li>
+						<div>
+							<h1>next-gen, now</h1>
+							<p class="lead">
+								a person of profound or extensive learning; learned scholar
+							</p>
+							<a class="btn btn-primary" href="download">Download</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<h1>world class</h1>
+							<p class="lead">
+								Developed in Toronto, used worldwide. Savant has thousands of users from 
+								leading hospitals and universities across the world.
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<h1>next generation</h1>
+							<p class="lead">
+								Built with the latest generation of sequencing data in mind. Use Savant to do next-gen analysis, today.
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<h1>visual analytics</h1>
+							<p class="lead">
+								See your data at all scales, from genome-wide trends to nucleotide anomalies, Savant converts data and information, all visually.
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<h1>user friendly</h1>
+							<p class="lead">
+								Designed for genomic researchers of all kinds. As powerful as the command-line, but much simpler to use.
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<h1>high performance</h1>
+							<p class="lead">
+								Cutting-edge computational algorithms bring big data analytics to your desktop computer.
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<h1>cost-effective</h1>
+							<p class="lead">
+								Savant software is completely open source. Despite being free, the platform is well supported by large and growing community.
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<h1>extendable</h1>
+							<p class="lead">
+								Extensive plugin frameworks let third-party developers extend the software to make highly specialized push-button analyses a reality.
+							</p>
+						</div>
+					</li>
+				</ul>-->
+			</div>
+			<hr>
+			<div class="row-fluid marketing">
+				<div class="span4">
+					<h4>Next-Generation</h4>
+					<p>
+						Built with the latest generation of sequencing data in mind. Use Savant to do next-gen analysis, today.
+					</p>
+					<h4>Visual Analytics</h4>
+					<p>
+						See your data at all scales, from genome-wide trends to nucleotide anomalies, Savant converts data and information, all visually.
+					</p>
+				</div>
+				<div class="span4">
+					<h4>User Friendly</h4>
+					<p>
+						Designed for genomic researchers of all kinds. As powerful as the command-line, but much simpler to use.
+					</p>
+					<h4>High Performance</h4>
+					<p>
+						Cutting-edge computational algorithms bring big data analytics to your desktop computer.
+					</p>
+				</div>
+				<div class="span4">
+					<h4>Cost-Effective</h4>
+					<p>
+						Savant software is completely open source. Despite being free, the platform is well supported by large and growing community.
+					</p>
+					<h4>Extendable</h4>
+					<p>
+						Extensive plugin frameworks let third-party developers extend the software to make highly specialized push-button analyses a reality.
+					</p>
+				</div>
+			</div>
+			<!--#include virtual="/p/assets/include/footer.html" -->
+		</div>
+		<!--#include virtual="/p/assets/include/scripts_footer.html" -->
+	</body>
+</html>

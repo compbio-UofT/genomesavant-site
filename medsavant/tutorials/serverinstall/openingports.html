@@ -1,0 +1,72 @@
+<h3>Opening ports</h3>
+<p>
+	Several ports need to be opened for the server to connect to clients, download data, and notify administrators via email.
+</p>
+<table class="table table-striped table-bordered">
+	<tbody>
+	<tr>
+		<td>36800 (default*)</td>
+		<td>bidirectional</td>
+		<td>
+			Connections with clients
+		</td>
+	</tr>
+	<tr>
+		<td>36801 (default*)</td>
+		<td>bidirectional</td>
+		<td>
+			Data transfer with clients
+	</tr>
+	<tr>
+		<td>80</td>
+		<td>incoming</td>
+		<td>
+			Data access and updates
+		</td>
+	</tr>
+	<tr>
+		<td>443</td>
+		<td>outgoing</td>
+		<td>
+			Mail
+		</td>
+	</tr>
+</tbody></table>
+<p>* You can change the defaults by setting the 'listen-on-port' parameter in the server configuration file. See the <a href="taketutorial.shtml?tutorial=serverinstall&part=startingserver"</p>previous section</a> for details.</p>
+<h4>Opening Ports</h4>
+<p>
+	Instructions for opening ports vary between operating systems. Consult reference manuals for your operating system for instructions on open ports.
+</p>
+<blockquote>
+<p>The following commands may work for your distribution:
+</p>
+<p class="code">
+sudo iptables -A INPUT -p tcp --dport 36800 ACCEPT;<br>
+sudo iptables -A INPUT -p tcp --dport 36801 ACCEPT;<br>
+sudo iptables-save;
+</p>
+</blockquote>
+<h4>Testing Ports</h4>
+<blockquote>
+	<p>
+		To test if a port has been sucessfully opened, you can use netcat. On the server machine, where the 
+		ports have been opened, do
+	</p>
+	<p class="code">
+		nc -l &lt;port&gt;
+	</p>
+	<p>
+		While that's waiting, on a client machine, do
+	</p>
+	<p class="code">
+		nc &lt;server_address&gt; &lt;port&gt;
+	</p>
+	<p>
+		Then, type some words on the client machine and hit enter/return. If the port is open, the server
+		will echo the words you typed on the client.
+	</p>
+</blockquote>
+<p>
+	Once the server is running and ports are opened, you'll be able to start administrating the installation
+	through the MedSavant client. Proceed to the Administration tutorial for instructions.
+</p>

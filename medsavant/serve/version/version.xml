@@ -1,0 +1,9 @@
+<root>
+<client name="1.1-SNAPSHOT">
+        <compatible>1.1-SNAPSHOT</compatible>
+	<compatible>1.0.1 beta</compatible>
+</client>
+<client name="1.0.1 beta">
+	<compatible>1.0.1 beta</compatible>
+</client>
+</root>

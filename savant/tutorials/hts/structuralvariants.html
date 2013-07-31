@@ -1,0 +1,43 @@
+<h3>Inspecting Structural Variations</h3>
+<p>
+	For this part, you'll need to continue looking at hg19, and the NA19240 alignments to this reference. Links to the .BAM file containing these alignments are listed in the previous part.
+</p>
+<p>
+	We will now inspect <b>Structural Variant calls</b> that have been made for this Yoruban individual. To help you, you will now load a set of bookmarks for these regions. Download <a href="http://genomesavant.com/share/cbw/files/sv_bookmarks.bks">this file</a> to your computer by <strong>right-clicking and choosing save</strong>. Load this file into the <strong>Bookmarks</strong> panel by clicking the <b>Folder icon</b> and choosing the file you just downloaded. If prompted to remove existing bookmarks or add padding, choose <b>Yes</b>.
+</p>
+<p>
+	<img src="tutorials/gettingstarted/img/Savant_loadbookmarks.png"/>
+</p>
+<p>
+	Switch the display mode of the read alignment track by first clicking it, then choosing <b>Display Mode &gt; Read Pair (Arc)</b> mode. In Arc mode the locations of read pair mappings are connected by an arc. Both the height and the width of this arc is proportional to the mapped distance of this pair. This makes discordant read pairs very easy to identify. <b>If you use, Standard mode, structural variations will be very difficult to detect</b>. You can also tell Savant to color discordant read pairs. Click <b>Tools &gt; Filter</b> and enter reasonable settings under Arc Mode Settings. What is &quot;normal&quot; very much depends on the sequencing technology used. For this example, you can <b>enter values shown in the image below</b> and press <b>OK</b>.
+</p>
+<p>
+	<img src="tutorials/gettingstarted/img/CBW_readsettings2.png"/>
+</p>
+<p>
+	Discordant pairs are joined with a purple arc. How are discordant read pairs visualized now?
+</p>
+<p>
+	Now <b>explore the variant regions, using the bookmarks list as a guide</b>.
+</p>
+<p>
+	Normal regions will have mostly concordant matepairs, with distance around 250 and orientation pointed inward. How can you tell which regions are normal?
+</p>
+<p>
+	Large arcs represent pairs which map too far apart compared to the insert size. Small arcs represent pairs that map too closely. Non-blue arcs represent pairs which are mapped in a different orientation than how they were sequenced. 'Which regions look suspect?
+</p>
+<p>
+	<img src="tutorials/gettingstarted/img/Savant_arcpatterns.png"/>
+</p>
+Thought Question(s):
+<ul>
+	<li>
+		Try hypothesizing what the sequenced individual's genome looks like. Do the patterns of read pair mappings agree with your hypothesis?
+	</li>
+	<li>
+		Can you distinguish between various kinds of structural variations (e.g. <b>deletions</b>, <b>insertions</b>, <b>duplications</b>)?
+	</li>
+	<li>
+		Use matepair information to determine the precise breakpoints of some structural variations
+	</li>
+</ul>

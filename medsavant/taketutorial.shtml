@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--#include virtual="/p/assets/include/meta.html" -->
+		<link href="../assets/js/prettify/prettify.css" type="text/css" rel="stylesheet" />
+		<script type="text/javascript" src="../assets/js/prettify/prettify.js"></script>
+	</head>
+	<body onload="prettyPrint()">
+		<!--#include virtual="/p/assets/include/banner_medsavant.html" -->
+		<div class="container-narrow">
+			<div class="masthead">
+				<!--#include virtual="/p/assets/include/navbar_medsavant.html" -->
+			</div>
+			<hr>
+			
+			<div class="row-fluid">
+				<div class="span4">
+					
+					<div id="tutorial_menu"></div>
+				</div><!--/span-->
+				<div class="span8">
+					<div id="tutorial_banner"></div>
+					<div id="tutorial_part"></div>
+				</div>
+			</div><!--/row-->
+			<!--#include virtual="/p/assets/include/footer.html" -->
+		</div>
+		<!--#include virtual="/p/assets/include/scripts_footer.html" -->
+		<script src="../assets/js/custom/getArgs.js"></script>
+		<script>
+			var tutorial = $_GET['tutorial'];
+			var part = $_GET['part'];
+			
+			if (part == null) {
+				part = "intro";
+			}
+
+			$('#tutorial_part').load('tutorials/' + tutorial + '/' + part + '.html');
+			$('#tutorial_menu').load('tutorials/' + tutorial + '/menu.html');
+			
+			if (part == 'intro') {
+				$('#tutorial_banner').load('tutorials/' + tutorial + '/banner.html');
+			}
+
+		</script>
+	</body>
+</html>

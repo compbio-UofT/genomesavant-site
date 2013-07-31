@@ -1,0 +1,102 @@
+<h3>Starting the MedSavant Server</h3>
+<p>
+	The MedSavant Server manages connections from MedSavant Clients to the Infobright database.
+</p>
+<h4>Getting the MedSavant server</h4>
+<p>
+	You can obtain a copy of the MedSavant server by building the source in our <a href="https://svn2.assembla.com/svn/savant/MedSavant/trunk/">SVN Repository</a> or
+	by contacting us for the latest stable build. The latter is preferred.
+</p>
+<h4>Building the MedSavant Server from Source</h4>
+<blockquote>
+	<h5>Downloading the source</h5>
+	<p>
+		Our codebase is available on <a href="https://github.com/compbio-UofT/medsavant">GitHub</a>.
+		To download it, do
+	</p>
+	<p class="code">
+		git clone https://github.com/compbio-UofT/medsavant.git
+	</p>
+	
+</blockquote>
+<blockquote>
+	<h5>Building the projects in NetBeans</h5>
+	<p>
+		In the previous step you downloaded 3 NetBeans projects: MedSavantClient, MedSavantServerEngine, and MedSavantShared. The latter
+		two are required to build the MedSavant Server. 
+	</p>
+	<p>
+		To build these projects you need to open them in <a href="http://netbeans.org">NetBeans</a>. If you don't already have NetBeans, we recommend
+		installing the "NetBeans + JDK Bundle". A Google search should take you to the latest version of the bundle. 
+	</p>
+</blockquote>
+<blockquote>
+	<h5>Configuring the Server Engine</h5>
+	<p>The server has a number of different configurable parameters, see the example below.</p>
+<div class="accordion" id="accordion2">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse_rpm"> Example Configuration File </a>
+		</div>
+		<div id="collapse_rpm" class="accordion-body collapse in">
+			<div class="accordion-inner">
+				<pre>
+db-user = mfiume
+db-password = mypassword
+db-host = localhost
+db-port = 5029
+listen-on-port = 36800
+email = myemail@address.com
+tmp-dir = /tmp/ms-temporary
+ms-dir = /home/ms-permanent
+				</pre>
+			</div>
+		</div>
+	</div>
+</div>
+</blockquote>
+<blockquote>
+	<h5>Starting the MedSavant Server</h5>
+	<p>
+		Once you've configured the server and database to your liking, you can start the server by doing
+	</p>
+	<p class="code">
+		java -jar -Djava.rmi.server.hostname=&lt;public_ip_of_server&gt; MedSavantServerEngine.jar -c &lt;path/to/config&gt; &
+	</p>
+	<div class="accordion" id="accordion3">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapse_rpm2"> Expected Output</a>
+		</div>
+		<div id="collapse_rpm2" class="accordion-body collapse in">
+			<div class="accordion-inner">
+				<pre>
+== MedSavant Server Engine ==
+
+Loading configuration from /home/ubuntu/medsavant/server/latest/config ...
+Directory information:
+  TMP DIRECTORY: /tmp/msavant has permissions rwx
+  MEDSAVANT DIRECTORY: /home/ubuntu/.medsavant has permissions rwx
+  CACHE DIRECTORY: /home/ubuntu/.medsavant/cache has permissions rwx
+
+Server Information:
+  SERVER ADDRESS: ip-10-139-38-13/10.139.38.13
+  LISTENING ON PORT: 36800
+  EXPORTING ON PORT: 36801
+
+Database Information:
+  DATABASE ADDRESS: localhost
+  DATABASE PORT: 5029
+  DATABASE USER: root
+
+Connecting to database ... OK
+Initializing server registry ... OK
+
+Server initialized, waiting for incoming connections...
+				</pre>
+			</div>
+		</div>
+	</div>
+</div>
+</blockquote>
+<p>You're now ready to open ports to enable remote access from clients.</p>

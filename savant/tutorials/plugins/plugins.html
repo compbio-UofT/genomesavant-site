@@ -1,0 +1,88 @@
+<h1>Part 4: Experimenting with plugins</h1>
+<p>
+	Savant is rather unique in in its ability to incorporate plugins. Plugins can fall into many categories:
+</p>
+<ul>
+	<p>
+		<b>Datasource</b>: enable access to an external datasource (e.g. UCSC and 1000 Genomes)
+	</p>
+	<p>
+		<b>Analytics</b>: perform custom analytics in realtime (e.g. Cufflinks)
+	</p>
+	<p>
+		<b>Visualization</b>: display custom graphics on top of tracks (e.g. SNP Finder)
+	</p>
+	<p>
+		<b>More</b> (e.g. Table View)
+	</p>
+</ul>
+<h3>Installation</h3>
+<p>
+	Plugins can be installed directly from within Savant. To do so, open the Plugin Manager by choosing <b>Plugins &gt; Plugin Manager &gt; Install from Repository</b>. The repository contains an updated list of plugins that are available for various versions of Savant.
+</p>
+<p>
+	Here is a list of plugins that work with the version of Savant used in this lab:
+</p>
+<ul>
+	<p>
+		Chromatogram -	Shows Sanger sequencing chromatograms overlaid on the reference genome
+	</p>
+	<p>
+		edgeR -	Detects and visualizes differential enrichment from RNA-seq or ChIP-seq data
+	</p>
+	<p>
+		Data table -	Shows textual data from track records in tabular form
+	</p>
+	<p>
+		GATK -	Predicts and visualizes genotypes from read alignment tracks
+	</p>
+	<p>
+		Gene ontology -	Guides navigation based on ontology terms
+	</p>
+	<p>
+		PING -	Guides navigation based on protein–protein interaction databases
+	</p>
+	<p>
+		Remote commander -	Issue navigation and other commands remotely through external tools
+	</p>
+	<p>
+		Ribosome -	Shows the amino acid translation of gene tracks
+	</p>
+	<p>
+		RNA-seq analyzer -	Reconstructs and estimates isoforms from RNA-seq data
+	</p>
+	<p>
+		SimpleSNP -	Predicts and visualizes SNVs from read alignment tracks
+	</p>
+	<p>
+		Snapshot -	Exports track images at every bookmarked genomic region
+	</p>
+	<p>
+		SRMA -	Realigns HTS read alignments
+	</p>
+	<p>
+		UCSC explorer -	Provides a graphical interface for loading UCSC tracks
+	</p>
+	<p>
+		WikiPathways -	Guides navigation based on biological pathways
+	</p>
+</ul>
+<p>
+	Experiment with plugins of interest. A simple exercise with the UCSC plugin is described below.
+</p>
+<h3>UCSC Explorer Plugin</h3>
+<p>
+	The UCSC Explorer Plugin is a datasource plugin that permits the loading tracks from UCSC's database in much the same way as in the UCSC Genome Browser.
+</p>
+<p>
+	Install the UCSC Explorer Plugin via the Savant Plugin Repository. Restart Savant and open Human hg18 genome and RefSeq genes.
+</p>
+<p>
+	We'll now open the UCSC Explorer plugin via the tab at the bottom of the screen. The UCSC Explorer resembles the [http://genome.ucsc.edu/cgi-bin/hgTables?command=start UCSC Table Browser]. Switch to <b>hg18 - Human - Mar. 2006 (NCBI36/hg18)</b>. Expand the <b>Comparative Genomics</b> section. Click the <b>phyloP46wayAll - Vertebrate Cons</b> checkbox, the click the <b>Load Selected Tracks</b> button. This track contains <b>sequence conservation</b> across 46 vertebrates.
+</p>
+<b>Questions(s):</b>
+<ul>
+	<li>
+		Compare the conservation at exonic regions versus at intronic regions. For most genes, there should be a noticeable difference.
+	</li>
+</ul>

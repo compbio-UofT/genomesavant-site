@@ -1,0 +1,28 @@
+<div id="side-menu" style="position:fixed; width:250px" class="well sidebar-nav">
+	<ul class="nav nav-list">
+		<li class="nav-header">
+			Tutorial: Getting Started
+		</li>
+		<li>
+			<a href="?tutorial=gettingstarted&part=intro">Overview</a>
+		</li>
+		<li>
+			<a href="?tutorial=gettingstarted&part=connecting">Logging into the MedSavant Server</a>
+		</li>
+		<li>
+			<a href="?tutorial=gettingstarted&part=interface">Navigating the interface</a>
+		</li>
+		<li>
+			<a href="tutorial">◄ Back to Tutorials</a>
+		</li>
+	</ul>
+</div>
+<script>
+	var links = document.getElementById('side-menu').getElementsByTagName('a');
+	for( i = 0; i < links.length; i++) {
+		var link = links[i];
+		if(extractPageName(link.getAttribute('href')).indexOf("part=" + part) !== -1) {
+			link.parentNode.className += " active";
+		}
+	}
+</script>
