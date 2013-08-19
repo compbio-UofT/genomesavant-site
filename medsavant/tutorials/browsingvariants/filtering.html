@@ -1,4 +1,42 @@
 <h3>Managing Variants</h3>
 <p>
-	// TODO
+	<h3>Specifying Search Conditions</h3>
+<p>
+Searching variants is performed in the "Variants" section of MedSavant.  Within each of the four subsections -- Spreadsheet, Browser, Charts, and Analytics -- there is a "Search Bar" button that will open or hide the search interface.  Each search condition is entered one at a time into the search condition edit box, and hitting enter will add that condition to the current search.  Upon adding a condition, you will be prompted for the allowed values for that search condition.  For example, to search for all variants on Chromosome 8, type "Chromosome" into the search condition edit box and hit enter (see below figure).  Then, check the box beside "8" to indicate that you are interested only in variants on this chromosome.</p>
+
+<p>Additional search terms can be added by typing them into the search condition edit box.  By default, all entered conditions will be ANDed together, so that each entered condition further restricts the search.  This can be changed to "OR" by clicking the small <img title="Edit" style="position: relative; top:-3px;" class="inline_icon" src="./tutorials/browsingvariants/icons/configure.png"/ > icon beside each condition, which activates an editing interface that also allows the acceptable values to be changed, or the condition to be deleted.  For example, to search for all A&rarr;T polymorphisms on Chromosome 8, enter the three search conditions "Chromosome", "Ref", and "Alt".  After each condition is entered, a small window of checkboxes will appear prompting for acceptable values, as in the below example:
+
+<div class="figure">
+  <img src="./tutorials/browsingvariants/images/searching.png" />
+<div id="example1" class="caption">
+  Searching for all A&rarr;T polymorphisms on chromosome 8.
+</div>
+</div>
+
+<p>To assist with constructing more complex queries, the search interface supports paranthesizing searches.  For example, to search for all A&rarr;T variants on Chromosome 7, or all Grarr;C polymorphisms on Chromosome 8, define a paranthesized search as (Chromosome is 8 AND Reference is A AND Alternate is T) OR (Chromosome is 7 AND Reference is G AND Alternate is C).  In MedSavant, each paranthesized expression is referred to as a group.  To illustrate, the following steps can be performed for the above query:
+
+<ol>
+  <li> Clear any search conditions you may have already entered by clicking the <img title="Clear Search Conditions" class="inline_icon" src="./tutorials/browsingvariants/icons/mac_remove.png"> icon, found at the bottom of the MedSavant window.</li>
+
+  <li> Enter the "Chromosome is 8" condition into the search condition editbox as described in the previous example.  When prompted for allowed Chromosome values, click 'Convert to Group' at the bottom of the dialog (<span class="ref" id="example2"></span>A).  Alternatively, any condition can be converted to a group by clicking the the <img title="Edit" style="position: relative; top:-3px;" class="inline_icon" src="./tutorials/browsingvariants/icons/configure.png"/ > icon beside the condition, and select "Convert to Group".This creates a new group, which initially only contains the single corresponding condition. </li>
+  
+  <li>Additional conditions can be added to the group by expanding the group by clicking the <img title="Expand" class="inline_icon" src="./tutorials/browsingvariants/icons/expand.png"/> icon, and typing the search condition in the search condition edit box associated with the group (<span class="ref" id="example2"></span>B).  In this example, add the "Reference is A" and "Alternate is T" conditions by typing "Reference<Enter>", and "Alternate<Enter>" into the upper search condition edit box, respectively, selecting the appropriate nucleotide in each case.  </li>
+  
+  <li>Repeat steps 2-3 above for the second half of the search, substituting the values "Chromosome is 7",
+  "Reference is G", and "Alternate is C".  Be sure to click the <img style="position: relative; top:-3px;" class="inline_icon" src="./tutorials/browsingvariants/icons/configure.png" title="Edit" /> beside the second group, and select "Convert to OR" (<span class="ref" id="example2"></span>C).
+</ol>
+
+<div class="figure" id="grouped_search.png">
+  <img src="./tutorials/browsingvariants/images/searching_p2.png" />
+<div id="example2" class="caption">
+  A grouped search to locate all A&rarr;T variants on chromosome 8, and all A&rarr;G variants on chromosome 7.
+</div>
+</div>
+
+<p>Finally, note that variants are only filtered against your search criteria after you click the 'Search' button.  In the spreadsheet view, clicking Search will update the circular graph in the main pane, and show the fraction of variants that match your query. Subsequently clicking 'Load Spreadsheet' will display the matching variants in a table.  </p>
+
+<h4>Saving and Loading Searches</h4>
+<p>
+Searches can be saved for later use via the <img title="Save" class="inline_icon" src="./tutorials/browsingvariants/icons/mac_save.png"> and  <img class="inline_icon" src="./tutorials/browsingvariants/icons/mac_load.png" title="Load"> icons at the bottom of the MedSavant window.  This allows queries you construct to be reused to query the database again, or to serve as a scaffold for building more complex searches.  These searches will be saved and loaded from your local filesystem, so after clicking 'save' or 'load', you will be prompted to specify or locate a filename, respectively.  This mechanism does not save the results of the search -- only the particular query used to generate the results.  To export the results of query, click the <img title="Actions" class="inline_icon" src="./tutorials/browsingvariants/icons/mac_action.png"> icon and select "Export to VCF".
+</p>
 </p>

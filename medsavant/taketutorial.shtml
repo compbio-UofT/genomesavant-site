@@ -4,8 +4,48 @@
 		<!--#include virtual="/p/assets/include/meta.html" -->
 		<link href="../assets/js/prettify/prettify.css" type="text/css" rel="stylesheet" />
 		<script type="text/javascript" src="../assets/js/prettify/prettify.js"></script>
+		<script>
+			
+function getOriginalWidthOfImg(img_element) {
+    var t = new Image();
+    t.src = img_element.attr('src');
+    return t.width ? t.width : 400;
+}
+
+function initTutorial(){
+    //init figures.
+    var figNum = 1;
+
+    var refs = {};
+
+    $('.caption').each(function(i){
+	var captionId = $(this).attr('id');
+	$('.ref').each(function(j){
+	    if($(this).attr('id') == captionId){
+		$(this).html("Figure "+figNum);
+	    }
+	});
+	$(this).html('<b>Figure '+figNum+++': </b>' + $(this).html());
+    });
+
+    $('.figure').each(function(i){
+	var zoomed = false;
+
+	$(this).click(function(e){ //this=figure div.
+	    e.preventDefault();
+	    var img = $(this).find('img');
+	    if(zoomed){
+		img.width(400);
+	    }else{
+		img.width(getOriginalWidthOfImg(img));
+	    }
+	    zoomed = !zoomed;
+	});
+    });
+}
+		</script>
 	</head>
-	<body onload="prettyPrint()">
+	<body onload="prettyPrint(); initTutorial()">
 		<!--#include virtual="/p/assets/include/banner_medsavant.html" -->
 		<div class="container-narrow">
 			<div class="masthead">
