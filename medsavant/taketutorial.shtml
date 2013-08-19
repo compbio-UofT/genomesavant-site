@@ -4,58 +4,16 @@
 		<!--#include virtual="/p/assets/include/meta.html" -->
 		<link href="../assets/js/prettify/prettify.css" type="text/css" rel="stylesheet" />
 		<script type="text/javascript" src="../assets/js/prettify/prettify.js"></script>
-		<script>
-			
-function getOriginalWidthOfImg(img_element) {
-    var t = new Image();
-    t.src = img_element.attr('src');
-    return t.width ? t.width : 400;
-}
-
-function initTutorial(){
-    //init figures.
-    var figNum = 1;
-
-    var refs = {};
-
-    $('.caption').each(function(i){
-	var captionId = $(this).attr('id');
-	$('.ref').each(function(j){
-	    if($(this).attr('id') == captionId){
-		$(this).html("Figure "+figNum);
-	    }
-	});
-	$(this).html('<b>Figure '+figNum+++': </b>' + $(this).html());
-    });
-
-    $('.figure').each(function(i){
-	var zoomed = false;
-
-	$(this).click(function(e){ //this=figure div.
-	    e.preventDefault();
-	    var img = $(this).find('img');
-	    if(zoomed){
-		img.width(400);
-	    }else{
-		img.width(getOriginalWidthOfImg(img));
-	    }
-	    zoomed = !zoomed;
-	});
-    });
-}
-		</script>
 	</head>
-	<body onload="prettyPrint(); initTutorial()">
+	<body onload="prettyPrint()">
 		<!--#include virtual="/p/assets/include/banner_medsavant.html" -->
 		<div class="container-narrow">
 			<div class="masthead">
 				<!--#include virtual="/p/assets/include/navbar_medsavant.html" -->
 			</div>
 			<hr>
-			
 			<div class="row-fluid">
 				<div class="span4">
-					
 					<div id="tutorial_menu"></div>
 				</div><!--/span-->
 				<div class="span8">
@@ -70,18 +28,59 @@ function initTutorial(){
 		<script>
 			var tutorial = $_GET['tutorial'];
 			var part = $_GET['part'];
-			
-			if (part == null) {
+
+			if(part == null) {
 				part = "intro";
 			}
 
-			$('#tutorial_part').load('tutorials/' + tutorial + '/' + part + '.html');
-			$('#tutorial_menu').load('tutorials/' + tutorial + '/menu.html');
-			
-			if (part == 'intro') {
-				$('#tutorial_banner').load('tutorials/' + tutorial + '/banner.html');
+			$('#tutorial_part').load('tutorials/' + tutorial + '/' + part + '.html', false);
+			$('#tutorial_menu').load('tutorials/' + tutorial + '/menu.html', false);
+
+			if(part == 'intro') {
+				$('#tutorial_banner').load('tutorials/' + tutorial + '/banner.html', false);
 			}
 
+			function getOriginalWidthOfImg(img_element) {
+				var t = new Image();
+				t.src = img_element.attr('src');
+				return t.width ? t.width : 400;
+			}
+
+			function initTutorial(){
+				//init figures.
+				var figNum = 1;
+
+				var refs = {};
+
+				$('.caption').each(function(i){
+					var captionId = $(this).attr('id');
+					$('.ref').each(function(j){
+						if($(this).attr('id') == captionId){
+							$(this).html("Figure "+figNum);
+						}
+					});
+					$(this).html('<b>Figure '+figNum+++': </b>' + $(this).html());
+				});
+
+				$('.figure').each(function(i){
+					var zoomed = false;
+					
+					$(this).click(function(e){ //this=figure div.
+						
+						e.preventDefault();
+						var img = $(this).find('img');
+						if(zoomed){
+							img.width(400);
+						}else{
+							img.width(getOriginalWidthOfImg(img));
+						}
+						zoomed = !zoomed;
+					});
+				});
+
+			}
+
+			initTutorial();
 		</script>
 	</body>
 </html>
