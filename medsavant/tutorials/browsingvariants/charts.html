@@ -1,4 +1,16 @@
-<h3>Managing Variants</h3>
-<p>
-	// TODO
-</p>
+<h3>Visualizing Trends</h3>
+MedSavant includes charting tools to explore the variant database through the construction of histograms.  These tools are located in the "Variants" section, under the subsection "Charts".  <span class="ref" id="chart"></span> shows the main features.  Each chart is a graph of the distribution of a particular variant attribute - e.g. its position, reference or alternate value, gender of the individual from which it was identified, DNA identifier, etc.  The variable of interest can be changed via the "Chart" drop-down menu in the upper left portion of the chart display.  </p> 
+<div class="figure">
+  <img src="./tutorials/browsingvariants/images/chart1.png" />
+<div id="chart" class="caption">
+  Sample chart graphing the distribution of variants across Chromosomes.  
+</div>
+</div>
+<p>The selected attribute can be further grouped by another secondary attribute, selected via the "Group by" drop-down menu towards the upper right of the chart display.  Grouping by a second attribute introduces a legend, and plots a separate histogram for each distinct value of the secondary attribute (<span class="ref" id="chartgb"></span>).  By default, continuous attributes are "binned" (discretized) into equal ranges pre-selected for that attribute (<span style="color: red">Marc: add more on how this is done?</span>).  When graphing a single attribute, checkboxes at the bottom of the chart can be used to display a pie chart, show original frequencies (<span color="red">what does this mean?  no effect?</span>), sort categorical attributes by frequency (so that the most frequent categories are left-most), or convert the X or Y-axis to a log scale. </p>
+<div class="figure">
+  <img src="./tutorials/browsingvariants/images/chart2.png" />
+  <div id="chartgb" class="caption">
+    The same chart as <span class="ref" id="chart"></span>, but grouped by 'Variant Type' to show the number of variants of a particular type per chromosome.  
+  </div>
+</div>
+

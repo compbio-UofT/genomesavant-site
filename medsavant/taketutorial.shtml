@@ -3,6 +3,7 @@
 	<head>
 		<!--#include virtual="/p/assets/include/meta.html" -->
 		<link href="../assets/js/prettify/prettify.css" type="text/css" rel="stylesheet" />
+<link href="../assets/css/tutorial.css" />
 		<script type="text/javascript" src="../assets/js/prettify/prettify.js"></script>
 	</head>
 	<body onload="prettyPrint()">
@@ -33,7 +34,10 @@
 				part = "intro";
 			}
 
-			$('#tutorial_part').load('tutorials/' + tutorial + '/' + part + '.html', false);
+			$('#tutorial_part').load('tutorials/' + tutorial + '/' + part + '.html', function(){
+		          initTutorial();
+		        });
+		
 			$('#tutorial_menu').load('tutorials/' + tutorial + '/menu.html', false);
 
 			if(part == 'intro') {
@@ -62,25 +66,25 @@
 					$(this).html('<b>Figure '+figNum+++': </b>' + $(this).html());
 				});
 
-				$('.figure').each(function(i){
-					var zoomed = false;
-					
-					$(this).click(function(e){ //this=figure div.
-						
-						e.preventDefault();
-						var img = $(this).find('img');
-						if(zoomed){
-							img.width(400);
-						}else{
-							img.width(getOriginalWidthOfImg(img));
-						}
-						zoomed = !zoomed;
-					});
-				});
+		                $('.figure').each(function(i){
+		                  var zoomed = false;		
+		                  $(this).click(function(e){ //this=figure div.
+		                        e.preventDefault();
+                           		$(this).find('img').each(function(j){		
+                                		if(!$(this).hasClass('inline_icon')){
+                                        		if(zoomed){
+                                                		$(this).width(400);
+                                        		}else{
+                                                		$(this).width(getOriginalWidthOfImg($(this)));
+		                                        }
+                                         		zoomed = !zoomed;
+		                                }
+		                        });
+		                  });
+		                });
 
 			}
 
-			initTutorial();
 		</script>
 	</body>
 </html>

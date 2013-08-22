@@ -1,0 +1,97 @@
+body{
+width: 95%;
+}
+
+.animated_gif{
+position: relative;
+margin-left: auto;
+margin-right: auto;
+background-image:url('http://www.iconsdb.com/icons/preview/black/video-play-3-xxl.png');
+background-repeat: no-repeat;
+background-position: center;
+width: 50%;
+text-align: center;
+}
+
+.animated_gif img{
+position: relative;
+display: block;
+margin-left: auto;
+margin-right: auto;
+z-index: -1;
+}
+
+
+.fixed-figure{
+position: relative;
+margin-left: auto;
+margin-right: auto;
+width:50%;
+text-align: center;
+}
+
+.fixed-figure img{
+position: relative;
+display: block;
+margin-left: auto;
+margin-right: auto;
+z-index: -1;
+}
+
+.figure{
+position: relative;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+
+.figure img{
+position: relative;
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 400px;
+z-index: -1;
+}
+
+.figure img{
+width: auto;
+}
+.caption{
+font-size:10pt;
+text-align: center;
+}
+.caption img{ 
+              display: inline;
+              }
+
+.inline_icon{
+vertical-align: middle;
+}
+
+
+.figure-with-legend{
+overflow: hidden;
+border: 1px solid black;
+}
+
+.figure-with-legend-image-container{
+float: left;
+margin-right: 10px;
+}
+
+.legend-title{
+font-face: bold;
+text-decoration: underline;
+}
+
+.legend-key{
+float: left;
+margin-right: 5px;
+}
+.legend-key-image{
+vertical-align: middle;
+}
+.legend-value{
+text-align: left;
+}
