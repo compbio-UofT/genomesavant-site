@@ -3,50 +3,8 @@
 	<head>
 		<!--#include virtual="/p/assets/include/meta.html" -->
 		<link href="../assets/js/prettify/prettify.css" type="text/css" rel="stylesheet" />
+		<link href="../assets/css/tutorial.css" type="text/css" rel="stylesheet" />
 		<script type="text/javascript" src="../assets/js/prettify/prettify.js"></script>
-		<style type="text/css">
-			body {
-				width: 95%;
-			}
-			.animated_gif {
-				position: relative;
-				margin-left: auto;
-				margin-right: auto;
-				background-image: url('http://www.iconsdb.com/icons/preview/black/video-play-3-xxl.png');
-				background-repeat: no-repeat;
-				background-position: center;
-				width: 50%;
-				text-align: center;
-			}
-			.animated_gif img {
-				position: relative;
-				display: block;
-				margin-left: auto;
-				margin-right: auto;
-				z-index: -1;
-			}
-			.figure {
-				position: relative;
-				margin-left: auto;
-				margin-right: auto;
-				width: 50%;
-				text-align: center;
-			}
-			.figure img {
-				position: relative;
-				display: block;
-				margin-left: auto;
-				margin-right: auto;
-				width: 400px;
-				z-index: -1;
-			}
-			.caption {
-				font-size: 10pt;
-			}
-			.inline_icon {
-				vertical-align: middle;
-			}
-		</style>
 	</head>
 	<body onload="prettyPrint()">
 		<!--#include virtual="/p/assets/include/banner_medsavant.html" -->
@@ -113,27 +71,69 @@ alert("setting zoomed to " + zoomed);
 }
 		</script>
 		<script>
-			var tutorial = $_GET['tutorial'];
-			var part = $_GET['part'];
+var tutorial = $_GET['tutorial'];
+var part = $_GET['part'];
 
-			if(part == null) {
-				part = "intro";
-			}
+if(part == null) {
+part = "intro";
+}
 
-			$('#tutorial_part').load('tutorials/' + tutorial + '/' + part + '.html', function(response, status, xhr) {
-				if(status == "error") {
-					var msg = "Sorry but there was an error: ";
-					$("#error").html(msg + xhr.status + " " + xhr.statusText);
-				} else {
-					initTutorial();
-				}
-			});
+$('#tutorial_part').load('tutorials/' + tutorial + '/' + part + '.html', function(response, status, xhr) {
+if(status == "error") {
+var msg = "Sorry but there was an error: ";
+$("#error").html(msg + xhr.status + " " + xhr.statusText);
+} else {
+initTutorial();
+}
+});
 
-			$('#tutorial_menu').load('tutorials/' + tutorial + '/menu.html', false);
+$('#tutorial_menu').load('tutorials/' + tutorial + '/menu.html', false);
 
-			if(part == 'intro') {
-				$('#tutorial_banner').load('tutorials/' + tutorial + '/banner.html', false);
-			}
+if(part == 'intro') {
+$('#tutorial_banner').load('tutorials/' + tutorial + '/banner.html', false);
+}
+
+function getOriginalWidthOfImg(img_element) {
+var t = new Image();
+t.src = img_element.attr('src');
+return t.width ? t.width : 400;
+}
+
+function initTutorial(){
+//init figures.
+var figNum = 1;
+
+var refs = {};
+
+$('.caption').each(function(i){
+var captionId = $(this).attr('id');
+$('.ref').each(function(j){
+if($(this).attr('id') == captionId){
+$(this).html("Figure "+figNum);
+}
+});
+$(this).html('<b>Figure '+figNum+++': </b>' + $(this).html());
+});
+
+$('.figure').each(function(i){
+var zoomed = false;
+$(this).click(function(e){ //this=figure div.
+e.preventDefault();
+$(this).find('img').each(function(j){
+if(!$(this).hasClass('inline_icon')){
+if(zoomed){
+$(this).width(400);
+}else{
+$(this).width(getOriginalWidthOfImg($(this)));
+}
+zoomed = !zoomed;
+}
+});
+});
+});
+
+}
+
 		</script>
 	</body>
 </html>
