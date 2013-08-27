@@ -1,0 +1,8 @@
+"Family ID","Hospital ID","ID of Mother","ID of Father","Gender","Affected","DNA ID(s)","BAM URL(s)","Phenotypes"
+"F000137","John Doe","Gertrude Doe","Edward Doe","1","true","","","Irritability, Abnormality of blood glucose concentration"
+"F000137","Margaret Roe","Pauline Roe","Augustus Roe","0","true","","",""
+"F000137","Gertrude Doe","","","2","true","","",""
+"F000137","Edward Doe","","","1","true","","",""
+"F000137","Pauline Roe","","","2","true","","",""
+"F000137","Augustus Roe","","","1","true","","",""
+"F000137","Jane Doe","Margaret Roe","John Doe","2","true","GS000002147-ASM","","Abnormality of blood glucose concentration"

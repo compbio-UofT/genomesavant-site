@@ -1,4 +1,33 @@
-<h3>Managing Gene and Region Lists</h3>
+<h3>Managing Region Lists</h3>
 <p>
-	// TODO
+	Gene and Region Lists group together selected genes, enabling them to be easily queried via the <a href="./taketutorial.shtml?tutorial=browsingvariants&part=filtering">search interface</a>, and analyzed through the various tools available in the <a href="./taketutorial.shtml?tutorial=browsingvariants&part=enrichment">analytics</a> subsection.  Region lists
+are managed via the "Gene Lists" subsection of the "Project" section, where they may be added by clicking the  <img src="inline_icon" src="./tutorials/dataentry/icons/add.png" />, and
+removed by clicking the <img src="inline_icon" src="./tutorials/dataentry/icons/remove.png" /> button, both located towards the lower left of the MedSavant window.  Clicking  <img src="inline_icon" src="./tutorials/dataentry/icons/add.png" /> launches the Region List Wizard, which steps through the creation of a Region List.  After assigning the region list a name in the wizard, an interface is presented where the genes of interest may be selected (<span class="ref" id="gene_selection"></span>).  In the left pane of this window, a list of 
+all gene names are displayed.  This list is searchable by typing in a chromosome (e.g. Chr1, Chr2, ..., Chr22, ChrX, ChrY) or gene name into the search text area, located at the top of the pane.  Alternatively, the pull-down menus associated with each column title filters the results by allowing only the selected value for that column.  For example, choosing "Chr1" from the "Chromosome" drop-down menu will restrict the list to only include genes locates on chromosome 1.  </p>
+
+<div class="figure">
+  <img src="./tutorials/dataentry/images/gene_selection.png" />
+<div id="gene_selection" class="caption">
+  Selecting genes for a new region list.  
+  </div>
+</div>
+
+<p>
+The right pane lists all genes that have been added to the region list.  Each gene of interest can be added by selecting it in the left pane, and clicking the "Add&rarr;" button, or by double clicking the gene, or by clicking and dragging it to from the left to the right pane.  Similarly, genes can be removed from the list by selecting them in the right pane, and clicking the "&larr;Remove" button, or by double clicking them in the right pane, or by clicking and dragging them from the right to the left pane.  To assist with the selection of functionally related genes, the gene selection step of the Region List Wizard includes support for the GeneMANIA algorithm.  To run GeneMANIA, select several genes and then click the 'Run GeneMANIA' button.  Multiple genes may be selected by holding down the CTRL key, and separately clicking each gene of interest.  Alternatively, a contiguous list of genes can be selected by clicking the first gene, holding down the Shift key, and then clicking the last gene. 
 </p>
+
+<p>
+After clicking 'Run GeneMANIA', the genes that are functionally most similar to those selected will be displayed in the left pane, ranked by order of similarity so that the most similar gene is listed first (<span class="ref" id="genemania" ></span>).  For more information on how GeneMANIA works, see the discussion in the <a ref="./taketutorial.shtml?tutorial=browsingvariants&part=spreadsheet">"Browsing the Spreadsheet"</a> section of this manual, or visit the GeneMANIA <a href="http://www.genemania.org">website</a>. These genes, predicted to be functionally related to the genes selected prior to clicking "Run GeneMANIA", may be added to the current region set by the usual mechanism: double clicking, dragging, or clicking the "Add&rarr;" button.  To discard the GeneMANIA results and return the left pane to its default (all genes not already part of the region list), click the "&larr;Close GeneMANIA results" button located just above the Gene MANIA results.
+</p>
+
+<div class="figure">
+  <img src="./tutorials/dataentry/images/genemania.png" />
+	<div id="gene_selection" class="caption">
+		GeneMANIA results using the genes MCFD2 and LMAN1 as input, both involved in the anterograde transport of blood coagulation factors from the ER.
+  </div>
+</div>
+
+<p>Once genes have been selected for the region list, click "Continue" to proceed to the next step of the wizard, and then click the "Create List" button in the upper right of the main 
+pane of the wizard.  Clicking "Finish" will close the wizard, and the new Region list will be visible in the left pane, and the genes associated with the list will be displayed on the right.  </p>
+
+<p>An alternative method of defining a region list is to import it from an external file.  To do this, click the <img class="inline_icon" src="./tutorials/dataentry/icons/import.png" /> icon near the bottom left of the MedSavant window.  After assigning a name to the region list, you can provide the filename of the file to be imported by clicking the button labelled with "...", immediately below and to the right of the "File" label.  The file may be a tab, comma, or space delimited file, and the delimiter can be selected using the round buttons near the top of the window.  The only available file format supported at present is a simplified version of the <a href="http://genome.ucsc.edu/FAQ/FAQformat.html#format1">.bed format</a>.  The first line of the file must have a tab, space, or comma delimited header -- depending on your selection -- with the titles for the columns.  The first four columns must be Chromosome, Start Position, End Position, and Name -- subsequent columns will be ignored.  Note that if the header is not present, the first line of the file will not be imported.  After the header, regions are listed one per row.  The chromosome should be specified as "chrN", where N is the chromosome number or letter, the start and end positions should be recorded as integers, and the name can be any alpha-numeric string.  A sample file is available <a href="./tutorials/dataentry/sample_region.bed">here</a>.  Once the file is loaded, a small preview of the first few lines of the file will be shown in the bottom of the window.  If this is correct, click "Continue", and then click "Create List" to create the region list. </p>  

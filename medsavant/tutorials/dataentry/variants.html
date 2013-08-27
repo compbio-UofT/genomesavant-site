@@ -1,4 +1,22 @@
 <h3>Managing Variants</h3>
 <p>
-	// TODO
+	Variants are imported from files following the variant call format (.vcf, more information is available <a href="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41">here<sup>1</sup></a>), through the "Variant Files" subsection of "Projects".  Files are added and removed by clicking the
+	<img src="inline_icon" src="./tutorials/dataentry/icons/add.png" /> or <img src="inline_icon" src="./tutorials/dataentry/icons/remove.png" /> buttons, respectively, located towards the bottom left of the MedSavant window.  Clicking <img src="inline_icon" src="./tutorials/dataentry/icons/add.png" /> will launch the "Import Variants Wizard", which will guide you through the process step-by-step.  First, you must specify whether the .vcf file is located on your own computer, or if the file already exists on the server.  If you choose the prior option, then in the next "Choose Files" step you will be prompted to specify the .vcf file by clicking the button labeled with "...".  Otherwise, you will be prompted to provide the full path to the file on the server.  Regardless, you will be asked whether you want to include Homozygous Reference variants, which is generally discouraged as <span style="color:red;">in general this could involve an enormous number of variants that aren't needed by most MedSavant users.</span>  In the "Add Tags" step, you may further filter the variants by sequencer, sequencer version, variant caller, variant caller version, or by technician. <span style="color:red">Expand? I'm not sure how this tagging system works?</span>. 
 </p>
+<p>
+Importing a large number of variants is a lengthy process, and can take up to several hours depending on the number and size of the files being imported.  For this reason, all importing happens "in the background", so that you can continue to use MedSavant while the importing occurs.  In the "Notifications" step of the MedSavant wizard, you can choose whether you wished to be notified by email when the importing is complete, by entering your email address.  Leave your email blank if you'd rather not receive the email.  Another option provided here is automatic publishing. If the "Automatically publish data upon import completion" checkbox is checked, then as soon as the import completes the variants will be "published" -- meaning that they will be made available to all users of the project.  However, this publishing process requires that MedSavant be restarted, so that MedSavant will automatically close itself as soon as the import is complete.  Alternatively,if this box is unchecked, a notification icon will appear in the upper right corner of the MedSavant window, next to the "App Store" button.  Clicking this notification will raise a dialog prompting to publish (necessitating a restart of MedSavant) or reverse the changes.  
+</p>
+
+<p>After the preceding "Location of Files", "Choose Files", "Add Tags", and "Notifications" steps are complete, click the "Import" button in the "Transfer, Annotate, and Publish Variants" section of the wizard to begin the import process.  This will launch the import as a background process, whose progress can be monitored by clicking the "Jobs" icon in the upper right corner of the MedSavant window, next to the "App Store" button (<span class="ref" id="vcf_import_monitor"></span>).
+</p>
+
+<div class="figure">
+  <img src="./tutorials/dataentry/images/vcf_import_progress.png" />
+	<div id="vcf_import_monitor" class="caption">
+  		Clicking the "Jobs" icon near the upper right launches a small window to monitor the progress of the .vcf file import.  
+  </div>
+</div>
+
+<!-- Delete everything below here -->
+<p><sup>1</sup><span style="color:red">Marc: we should link to whatever vcf format we support</span></p>
+vcf_import_progress.png
