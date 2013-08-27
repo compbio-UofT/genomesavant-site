@@ -78,6 +78,11 @@ border: 1px solid black;
 .figure-with-legend-image-container{
 float: left;
 margin-right: 10px;
+display: inline;
+}
+
+.figure-with-legend-image-container img {
+	display: inline;
 }
 
 .legend-title{

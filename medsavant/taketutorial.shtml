@@ -3,7 +3,7 @@
 	<head>
 		<!--#include virtual="/p/assets/include/meta.html" -->
 		<link href="../assets/js/prettify/prettify.css" type="text/css" rel="stylesheet" />
-<link href="../assets/css/tutorial.css" />
+		<link href="../assets/css/tutorial.css" type="text/css" rel="stylesheet" />
 		<script type="text/javascript" src="../assets/js/prettify/prettify.js"></script>
 	</head>
 	<body onload="prettyPrint()">
@@ -27,63 +27,112 @@
 		<!--#include virtual="/p/assets/include/scripts_footer.html" -->
 		<script src="../assets/js/custom/getArgs.js"></script>
 		<script>
-			var tutorial = $_GET['tutorial'];
-			var part = $_GET['part'];
+function getOriginalWidthOfImg(img_element) {
+var t = new Image();
+t.src = img_element.attr('src');
+return t.width ? t.width : 400;
+}
 
-			if(part == null) {
-				part = "intro";
-			}
+function initTutorial(){
+//init figures.
+var figNum = 1;
 
-			$('#tutorial_part').load('tutorials/' + tutorial + '/' + part + '.html', function(){
-		          initTutorial();
-		        });
-		
-			$('#tutorial_menu').load('tutorials/' + tutorial + '/menu.html', false);
+var refs = {};
 
-			if(part == 'intro') {
-				$('#tutorial_banner').load('tutorials/' + tutorial + '/banner.html', false);
-			}
+$('.caption').each(function(i){
+var captionId = $(this).attr('id');
+$('.ref').each(function(j){
+if($(this).attr('id') == captionId){
+$(this).html("Figure "+figNum);
+}
+});
+$(this).html('<b>Figure '+figNum+++': </b>' + $(this).html() + " <i>(click to zoom)</i>");
+});
 
-			function getOriginalWidthOfImg(img_element) {
-				var t = new Image();
-				t.src = img_element.attr('src');
-				return t.width ? t.width : 400;
-			}
+$('.figure').each(function(i){
+var zoomed = false;
 
-			function initTutorial(){
-				//init figures.
-				var figNum = 1;
+$(this).click(function(e){ //this=figure div.
+alert("clicked, zoomed " + zoomed);
+e.preventDefault();
+var img = $(this).find('img');
+if(zoomed){
+img.width(400);
+alert("setting width to " + 400);
+}else{
+img.width(getOriginalWidthOfImg(img));
+alert("setting width to " + getOriginalWidthOfImg(img));
+}
+zoomed = !zoomed;
+alert("setting zoomed to " + zoomed);
+});
+});
 
-				var refs = {};
+}
+		</script>
+		<script>
+var tutorial = $_GET['tutorial'];
+var part = $_GET['part'];
 
-				$('.caption').each(function(i){
-					var captionId = $(this).attr('id');
-					$('.ref').each(function(j){
-						if($(this).attr('id') == captionId){
-							$(this).html("Figure "+figNum);
-						}
-					});
-					$(this).html('<b>Figure '+figNum+++': </b>' + $(this).html());
-				});
+if(part == null) {
+part = "intro";
+}
 
-		                $('.figure').each(function(i){
-		                  var zoomed = false;		
-		                  $(this).click(function(e){ //this=figure div.
-		                        e.preventDefault();
-                           		$(this).find('img').each(function(j){		
-                                		if(!$(this).hasClass('inline_icon')){
-                                        		if(zoomed){
-                                                		$(this).width(400);
-                                        		}else{
-                                                		$(this).width(getOriginalWidthOfImg($(this)));
-		                                        }
-                                         		zoomed = !zoomed;
-		                                }
-		                        });
-		                  });
-		                });
+$('#tutorial_part').load('tutorials/' + tutorial + '/' + part + '.html', function(response, status, xhr) {
+if(status == "error") {
+var msg = "Sorry but there was an error: ";
+$("#error").html(msg + xhr.status + " " + xhr.statusText);
+} else {
+initTutorial();
+}
+});
 
-			}
+$('#tutorial_menu').load('tutorials/' + tutorial + '/menu.html', false);
+
+if(part == 'intro') {
+$('#tutorial_banner').load('tutorials/' + tutorial + '/banner.html', false);
+}
+
+function getOriginalWidthOfImg(img_element) {
+var t = new Image();
+t.src = img_element.attr('src');
+return t.width ? t.width : 400;
+}
+
+function initTutorial(){
+//init figures.
+var figNum = 1;
+
+var refs = {};
+
+$('.caption').each(function(i){
+var captionId = $(this).attr('id');
+$('.ref').each(function(j){
+if($(this).attr('id') == captionId){
+$(this).html("Figure "+figNum);
+}
+});
+$(this).html('<b>Figure '+figNum+++': </b>' + $(this).html());
+});
+
+$('.figure').each(function(i){
+var zoomed = false;
+$(this).click(function(e){ //this=figure div.
+e.preventDefault();
+$(this).find('img').each(function(j){
+if(!$(this).hasClass('inline_icon')){
+if(zoomed){
+$(this).width(400);
+}else{
+$(this).width(getOriginalWidthOfImg($(this)));
+}
+zoomed = !zoomed;
+}
+});
+});
+});
+
+}
 
 		</script>
 	</body>

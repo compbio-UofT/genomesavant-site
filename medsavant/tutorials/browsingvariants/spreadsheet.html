@@ -5,26 +5,30 @@ button in the main pane towards the center of the MedSavant window.  Each varian
 <h4><a id="VariantInspector">Variant Inspector</a></h4>
 <p>The "Inspector" is a powerful feature found in the Spreadsheet subsection and elsewhere within the "Variants" section of MedSavant.  The Inspector can be accessed by clicking the "Inspector" button, located near the top of the MedSavant window just below the section selection button bar.  Clicking this displays a panel to the right showing information about the selected variant including <b>Basic Variant Information</b>: i.e. the chromosomal position, Reference and Alternate nucleotides, type of mutation, and a drop-down list of Genes associated with the position (<span class="ref" id="basicvar"> </span>). </p>
 
+<div class="row">
+	<div class="span6 offset1">
+		<img src="./tutorials/browsingvariants/images/inspector_variant.png" />
+	</div>
 
-<div class="fixed-figure">
-<div class="figure-with-legend">
-<div class="figure-with-legend-image-container">
-  <img src="./tutorials/browsingvariants/images/inspector_variant.png" />
-</div>
-<div class="legend-title">Button Summary</div>
-<div class="legend-key"><img class="legend-key-image" src="./tutorials/browsingvariants/icons/cpy.png" /></div><div class="legend-value"><b>Copy Position, DNA ID, or DBSNP ID to Clipboard</b></div>
-<BR>
-<div class="legend-key"><img class="legend-key-image" src="./tutorials/browsingvariants/icons/icon_gbrowse.png" /></div><div class="legend-value"><b>View Region in Browser</b> - Starts the Savant Genome Browser (see <a href="">Browser</a> section of manual) to view the position of this variant on a gene track.</div>
-<BR>
-<div class="legend-key"><img class="legend-key-image" src="./tutorials/browsingvariants/icons/inspector2.png" /></div><div class="legend-value"><b>Inspect this Gene</b> - Launches the <a href="#GeneInspector">Gene Inspector</a> for the Gene currently selected in the "GENES" drop-down menu.</div>
-<BR>
-<div class="legend-key"><img class="legend-key-image" src="./tutorials/browsingvariants/icons/linkout.png" /></div><div class="legend-value"><b>Lookup dbSNP ID at NCBI</b> - Searches for this SNP at the NCBI Genome database</div>
-</div>
-<div class="caption" id="basicvar">
-  Example of the "Inspector" view for the selected position 12,009,911 on Chromosome 1.  Clicking the 'Show' button displays additional information including DP, AF1, AC1, DP4, MQ, FQ, and PV4. <span style="color:red">Marc: Insert text here</span>.  
-</div>
+	<div class="span5">
+		<div class="legend-title">Button Summary</div>
+		<div class="legend-key"><img class="legend-key-image" src="./tutorials/browsingvariants/icons/cpy.png" /></div><div class="legend-value"><b>Copy Position, DNA ID, or DBSNP ID to Clipboard</b></div>
+		<BR>
+		<div class="legend-key"><img class="legend-key-image" src="./tutorials/browsingvariants/icons/icon_gbrowse.png" /></div><div class="legend-value"><b>View Region in Browser</b> - Starts the Savant Genome Browser (see <a href="">Browser</a> section of manual) to view the position of this variant on a gene track.</div>
+		<BR>
+		<div class="legend-key"><img class="legend-key-image" src="./tutorials/browsingvariants/icons/inspector2.png" /></div><div class="legend-value"><b>Inspect this Gene</b> - Launches the <a href="#GeneInspector">Gene Inspector</a> for the Gene currently selected in the "GENES" drop-down menu.</div>
+		<BR>
+		<div class="legend-key"><img class="legend-key-image" src="./tutorials/browsingvariants/icons/linkout.png" /></div><div class="legend-value"><b>Lookup dbSNP ID at NCBI</b> - Searches for this SNP at the NCBI Genome database</div>
+	</div>
 </div>
 
+<div class="row">
+	<div class="span11 offset1">
+		<div class="caption" id="basicvar">
+  		Example of the "Inspector" view for the selected position 12,009,911 on Chromosome 1.  Clicking the 'Show' button displays additional information including DP, AF1, AC1, DP4, MQ, FQ, and PV4. <span style="color:red">Marc: Insert text here</span>.  
+		</div>
+	</div>
+</div>
 
 <p>Just below the variant information is a textbox where comments can be viewed and edited for this variant, and below that is a list of individuals that possess any variant at the selected position.  Clicking any of these individuals will display the particular polymorphism, insertion, or deletion associated with that individual.  Then, clicking the 'Show' button will de-select the currently selected variant, and load the variant corresponding to the selected individual into the inspector (<span class="ref" id="indswithvariant"></span>, right side).  Below this are two buttons that launch a hierarchical display of the variants at this position, organized by Cohort or Family (<span class="ref" id="indswithvariant"></span>, left side).  In this way, one can see at a glance which variants are over-represented within a Cohort or family, or relative to the entire database of DNA sequences.  </p>
 
@@ -39,12 +43,15 @@ button in the main pane towards the center of the MedSavant window.  Each varian
 
 <h4><a id="GeneInspector">Gene Inspector</a></h4>
 <p> The Gene Inspector can be launched by clicking the "Gene" tab of the inspector, or via the <img class="inline_icon" src="./tutorials/browsingvariants/icons/inspector2.png" /> button in <span class="ref" id="basicvar"></span>.  This inspector is organized into four sub-panels of information: "Gene Details", "Individuals with a variant in this gene", "Ontology", and "Related Genes".  The "Gene Details" section contains basic information including the name of the gene, its chromosomal position, and its DNA sequence length (<span style="color:red;">exons only?</span>) (<span class="ref" id="inspector_gene"></span>).  Immediately below, the "Individuals with a variant in this gene" section lists all individuals that possess any type of variant that lies within the range delimited by the start and end of this Gene's sequence.  Clicking any individual will bring up a summary of the variants that individual possesses.  In <span class="ref" id="inspector_gene"></span>, the individual with sequence identifier DB_MD_244_M9-1 has three heterozygous insertions <span style="color:red">(are these meaningful?  only spaced by 1-2 nucleotides)</span> at various positions within this gene (PRDM2).  Clicking the <img class="inline_icon" src="./tutorials/browsingvariants/icons/expand.png" /> icon beside any of the listed variants provides additional detail on the Reference and Alternate sequences for that variant.
-<div class="fixed-figure">
-  <div class="figure-with-legend">
-    <div class="figure-with-legend-image-container">
-      <img src="./tutorials/browsingvariants/images/inspector_gene.png">
-    </div>
-    <div class="legend-title">
+	
+	
+<div class="row">
+	<div class="span6 offset1">
+		<img src = "./tutorials/browsingvariants/images/inspector_gene.png" />		
+	</div>
+
+	<div class="span5">
+		<div class="legend-title">
       Button Summary
     </div>
 
@@ -68,31 +75,38 @@ button in the main pane towards the center of the MedSavant window.  Each varian
     <div class="legend-value">
       <b>View Region in Browser</b> - Starts the Savant Genome Browser (see <a href="">Browser</a> section of manual) to view the position on a track.
     </div>
-  </div>
-  <div class="caption" id="inspector_gene">
-    Gene Inspector
-  </div>
-</div>  
+	</div>
+</div>
 
+<div class="row">
+	<div class="span11 offset1">
+		<div class="caption" id="inspector_gene">
+ 			Gene Inspector		
+ 		</div>
+	</div>
+</div>
+	
 <p>Similar to the Cohort and Family analysis tools in the previous <a href="#VariantInspector">Variant Inspector</a> section, the Gene Inspector section also includes two buttons to view the frequency with which variants occur in the selected gene by Cohort or by Family.  These work similarily to those in the previous section, but include an additional 'Position' column, as <b>all</b> variants for the selected gene are shown (<span class="ref" id="genecohortanalysis" /></span>).</p>
 
 <div class="figure">
   <img src="./tutorials/browsingvariants/images/genecohortanalysis.png" />
-<div id="genecohortanalysis" class="caption">
-  Variants associated with the gene PRDM2 -- found by clicking the "Variants within this gene by Cohort" button as shown in <span class="ref" id="inspector_gene"></span>.  Here, the "All Individuals" row has been collapsed by clicking <img class="inline_icon" src="./tutorials/browsingvariants/icons/collapse.png" />, showing that 72 of 110 individuals contain at least one variant within the PRDM2 gene.  The remaining rows have been collapsed on the "Position" column, and it can therefore be seen, for example, that 2 of the 4 individuals assigned to Cohort A possess a variant at position 14,106,394.
-</div>
+	<div id="genecohortanalysis" class="caption">
+  	Variants associated with the gene PRDM2 -- found by clicking the "Variants within this gene by Cohort" button as shown in <span class="ref" id="inspector_gene"></span>.  Here, the "All Individuals" row has been collapsed by clicking <img class="inline_icon" src="./tutorials/browsingvariants/icons/collapse.png" />, showing that 72 of 110 individuals contain at least one variant within the PRDM2 gene.  The remaining rows have been collapsed on the "Position" column, and it can therefore be seen, for example, that 2 of the 4 individuals assigned to Cohort A possess a variant at position 14,106,394.
+	</div>
 </div>
 <h4><a id="GeneMANIA">GeneMANIA</a></h4>
 <p>MedSavant includes built-in support for the GeneMANIA prediction algorithm, to predict genes that are functionally similar to one or more selected genes based on multiple sources of biological evidence including physical protein-protein interactions, genetic interactions, co-expression, co-localization, shared domains, and various other data sources described at the <a href="http://genemania.org">GeneMANIA</a> website. The first time you run MedSavant, the GeneMANIA data (currently ~600MB) will need to be downloaded, requiring an active internet connection.  In this case, the "Related Genes" section will only include a 'Download GeneMANIA' button that will download the data, extract, and install it automatically.  After clicking the button, the download and installation will take place in the background (you can monitor its progress by clicking the 'Jobs' in the upper right of the MedSavant window).  Once GeneMANIA is installed, the "Related Genes" section will always be populated with the GeneMANIA prediction results, and you will not need to repeat the download step.</p>
 
 <p> Each GeneMANIA prediction is listed in descending order of similarity to the selected query gene, so that the most similar genes are listed first.  The variation frequency, listed beside each gene, displays the fraction of variant positions per kilobase (<span style="color:red;">Is this right?</span>), and several buttons as summarized in <span class="ref" id="genemania"></span>.</p>
 
-<div class="fixed-figure">
-  <div class="figure-with-legend">
-    <div class="figure-with-legend-image-container">
-      <img src="./tutorials/browsingvariants/images/related_genes.png">
-    </div>
-    <div class="legend-title">
+
+<div class="row">
+	<div class="span6 offset1">
+		<img src = "./tutorials/browsingvariants/images/related_genes.png" />		
+	</div>
+
+	<div class="span5">
+		 <div class="legend-title">
       Button Summary
     </div>
 
@@ -113,9 +127,15 @@ button in the main pane towards the center of the MedSavant window.  Each varian
     <div class="legend-value">
       <b>Lookup Gene at Entrez Gene</b> - Launches a web browser to view the record for this gene in the Entrez Gene database.
     </div>
-  </div>
-  <div class="caption" id="genemania">
-    Genes related to the selected (query) gene, found by the GeneMANIA algorithm.  Genes that are most similar to the query gene are shown first.
-  </div>
+	</div>
 </div>
+
+<div class="row">
+	<div class="span11 offset1">
+		<div class="caption" id="genemania">
+    	Genes related to the selected (query) gene, found by the GeneMANIA algorithm.  Genes that are most similar to the query gene are shown first.
+ 		</div>
+	</div>
+</div>
+
 
