@@ -1,4 +1,17 @@
-<h3>Variant Annotation</h3>
-<p>
-	// TODO
-</p>
+<h3>Installing Annotations</h3>
+<p>Annotations are installed or removed via the "Annotations" subsection of the "Admin" section, by clicking the add (<img class="inline_icon" src="./tutorials/browsingvariants/icons/mac_add.png" />) or remove (<img class="inline_icon" src="./tutorials/browsingvariants/icons/mac_remove.png" />) buttons, respectively, and following the instructions in the wizard (<span class="ref" id="install_annotation"></span>).  All annotations are stored in a central repository, and transferring the annotation to the client may take some time, depending on the file size.  </p>
+<div class="figure">
+  <img src="./tutorials/administration/images/install_annotation.png" />
+  <div id="install_annotation" class="caption">
+		Choosing an annotation from the repository.
+  </div>
+</div>
+
+<p>To associate an annotation with an existing project, click the "Projects" subsection of the Admin section, and then click the <img class="inline_icon" src="./tutorials/browsingvariants/icons/configure.png" /> button (located towards the lower left of the MedSavant window) to modify the project.  Note that if the project is locked (shown on the right side of the MedSavant window when the project is selected in the "Projects" subsection), you will not be able to make changes to the project until you unlock it by clicking the "Unlock" button towards the upper right of the MedSavant window. The project modification wizard allows you to make various changes to the current project using the same interface used to create the project (see the <a href="taketutorial.shtml?tutorial=administration&part=creatingaproject">Creating Projects</a> section). If you don't want to change any other aspects of the project, click the "Continue" button until you reach the "Reference" section, and use the checkboxes to select the reference genome and annotation for the currently selected project (<span class="ref" id="project_mod"></span>)  Project modification is a long task regardless of the speed of your network connection or computer, as it primarily executes on the MedSavant server.  In the "Notifications" section, the wizard will therefore ask if you would like an email when the modification is complete and if you want to automatically publish the results.  Publishing the changes is necessary for them to be visible, but it requires shutting down MedSavant.  If you select to automatically publish, MedSavant will shutdown automatically once the operation is complete -- otherwise, a "notification" button will appear in the upper right. Clicking that button will prompt whether to cancel the changes, or publish the changes and shut down MedSavant.  Once project modification is initiated via the "Modify" section of the wizard, it will execute in the background until it is complete.</p> 
+
+<div class="figure">
+  <img src="./tutorials/administration/images/project_mod.png" />
+  <div id="project_mod" class="caption">
+		Associating an annotation with a project.
+  </div>
+</div>
