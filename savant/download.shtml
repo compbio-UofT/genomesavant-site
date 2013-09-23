@@ -23,7 +23,7 @@
 					os = "your favorite OS";
 				}
 			</script>
-			<div class="jumbotron" style="background-image: url(../assets/img/cover/savant_logo.jpg)">
+			<div class="jumbotron" style="background-image: url(../assets/img/cover/savantlogo.png)">
 				<h1>not an average browser</h1>
 				<p class="lead">
 					There are over 40 different genome browsers. Savant is not one of them. Savant was built

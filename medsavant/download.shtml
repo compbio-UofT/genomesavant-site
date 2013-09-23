@@ -23,7 +23,7 @@
 					os = "your favorite OS";
 				}
 			</script>
-			<div class="jumbotron" style="background-image: url(../assets/img/cover/medsavant_logo.jpg)">
+			<div class="jumbotron" style="background-image: url(../assets/img/cover/medsavantlogo.png)">
 				<h1>find it faster</h1>
 				<p class="lead">
 					MedSavant integrates storage, annotation, filtration, prioritization, and inspection of genomic variants.

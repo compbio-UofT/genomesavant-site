@@ -41,8 +41,8 @@
 <p>The following commands may work for your distribution:
 </p>
 <p class="code">
-sudo iptables -A INPUT -p tcp --dport 36800 ACCEPT;<br>
-sudo iptables -A INPUT -p tcp --dport 36801 ACCEPT;<br>
+sudo iptables -A INPUT -p tcp --dport 36800 -j ACCEPT;<br>
+sudo iptables -A INPUT -p tcp --dport 36801 -j ACCEPT;<br>
 sudo iptables-save;
 </p>
 </blockquote>
